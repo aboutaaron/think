@@ -34,6 +34,12 @@ These tools are for anyone who uses AI and wants the output to reflect genuine t
 | **source-to-receipt** | "make this a receipt" | Article → one inline citation with link text |
 | **editorial-review** | "would you publish this" | Publish/revise/reject with concrete feedback |
 
+### 🔄 Reflection
+| Skill | Trigger | What it does |
+|-------|---------|-------------|
+| **weekly-review** | "weekly review" | Structured reflection — shipped, learned, carry forward |
+| **decision-journal** | "log this decision" | Track decisions with expected outcomes, review later |
+
 ### 🧭 House Views
 | Skill | Trigger | What it does |
 |-------|---------|-------------|
