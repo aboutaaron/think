@@ -1,4 +1,4 @@
-# Thinking Pipeline
+# Think
 
 A cognitive toolkit for AI-assisted thinking — works with OpenClaw, Claude Code, and Cursor.
 
@@ -22,13 +22,24 @@ A cognitive toolkit for AI-assisted thinking — works with OpenClaw, Claude Cod
 | Skill | Trigger | What it does |
 |-------|---------|-------------|
 | **source-to-receipt** | "make this a receipt" | Article → one inline citation with link text |
-| **phv-challenge** | "PHV check" | Map content against House Views |
 | **editorial-review** | "would you publish this" | Publish/revise/reject with concrete feedback |
+
+### 🧭 House Views
+| Skill | Trigger | What it does |
+|-------|---------|-------------|
+| **phv-create** | "create my house views" | Build a Personal House Views document from scratch |
+| **phv-challenge** | "PHV check" | Map content against your House Views |
 
 ### 🤝 Networking
 | Skill | Trigger | What it does |
 |-------|---------|-------------|
 | **cold-outreach** | "draft an outreach email" | NEXT Careers framework, peer conversation framing |
+
+## What Are House Views?
+
+House Views are **falsifiable positions you hold about the world** — named, tracked, and actively challenged. The concept comes from [Azeem Azhar's "The Lantern and the Flame"](https://www.exponentialview.co/p/the-lantern-and-the-flame), where he describes codifying what he already believes so new arguments face *challenge rather than confirmation*.
+
+Each House View has a position, sources, a "therefore" (what it means for your decisions), and a revision trigger (what would change your mind). Use `phv-create` to build yours, then `phv-challenge` to test them against everything you read.
 
 ## Installation
 
@@ -42,8 +53,7 @@ Copy the commands to your project:
 
 ```bash
 mkdir -p .claude/commands
-cp claude-code/commands/* .claude/commands/
-cp claude-code/CLAUDE.md .  # Optional — adds skill descriptions to project context
+cp thinking-pipeline/claude-code/commands/* .claude/commands/
 ```
 
 Commands are available as `/think:start`, `/think:architect`, etc.
@@ -52,13 +62,13 @@ Commands are available as `/think:start`, `/think:architect`, etc.
 
 **Option A — .cursorrules (recommended):**
 ```bash
-cp cursor/thinking-pipeline.cursorrules /path/to/project/.cursorrules
+cp thinking-pipeline/cursor/thinking-pipeline.cursorrules /path/to/project/.cursorrules
 ```
 
 **Option B — Individual rules:**
 ```bash
 mkdir -p .cursor/rules
-cp cursor/rules/* .cursor/rules/
+cp thinking-pipeline/cursor/rules/* .cursor/rules/
 ```
 
 Reference skills by name in Cursor chat: "Use the argument-architect skill on this document."
@@ -80,3 +90,7 @@ recall-first → argument-architect → devils-advocate → editorial-review
 ```
 
 Each step gates the next. Available as a single command or run individually.
+
+## Credits
+
+House Views framework inspired by [Azeem Azhar](https://www.exponentialview.co/p/the-lantern-and-the-flame). Feynman Test based on [Richard Feynman's learning technique](https://fs.blog/feynman-technique/). NEXT Careers networking framework from [NEXT Careers](https://next-careers.circle.so/).
