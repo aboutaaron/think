@@ -105,9 +105,9 @@ Each step gates the next. Available as a single command or run individually.
 
 ## Credits & Inspiration
 
-- **"Think First, AI Second"** by [Ines Lee (Every)](https://every.to/p/think-first-ai-second) — the essay that started all of this
-- **House Views** framework by [Azeem Azhar (Exponential View)](https://www.exponentialview.co/p/the-lantern-and-the-flame)
-- **Feynman Test** based on [Richard Feynman's learning technique](https://fs.blog/feynman-technique/)
-- **Cold outreach** framework from [NEXT Careers](https://www.linkedin.com/company/nextcareers/)
+- **["Think First, AI Second"](https://every.to/p/think-first-ai-second)** by Ines Lee (Every) — the essay that started all of this. Five questions, devil's advocate, Feynman test, and structural gap analysis all trace back here.
+- **["The Lantern and the Flame"](https://www.exponentialview.co/p/the-lantern-and-the-flame)** by Azeem Azhar (Exponential View) — the House Views framework for codifying falsifiable beliefs
+- **[NEXT Careers](https://www.linkedin.com/company/nextcareers/)** — career accelerator whose networking, personal branding, and compensation frameworks inform the cold-outreach, elevator-pitch, and negotiate skills
+- **[Compound Engineering](https://github.com/cescobarresi/compound-engineering)** — the OpenClaw plugin architecture and slash command pattern that the thinking-pipeline plugin is modeled after
 
 Built by [Aaron Williams](https://acwx.net).
