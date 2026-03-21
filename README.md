@@ -45,6 +45,7 @@ These tools are for anyone who uses AI and wants the output to reflect genuine t
 |-------|---------|-------------|
 | **cold-outreach** | "draft an outreach email" | NEXT Careers framework, peer conversation framing |
 | **elevator-pitch** | "build my pitch" | Personal brand statement + tailored elevator pitch |
+| **negotiate** | "help me negotiate" | Comp negotiation strategy — market value, equity, scripting |
 
 ## What Are House Views?
 
