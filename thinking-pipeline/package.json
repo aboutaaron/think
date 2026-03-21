@@ -1,0 +1,25 @@
+{
+  "name": "openclaw-thinking-pipeline",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "Thinking pipeline plugin — 10 slash commands for structured thinking, argument analysis, and editorial review.",
+  "main": "index.ts",
+  "openclaw": {
+    "extensions": [
+      {
+        "id": "thinking-pipeline",
+        "entry": "./index.ts"
+      }
+    ]
+  },
+  "keywords": [
+    "openclaw",
+    "openclaw-plugin",
+    "thinking",
+    "reasoning",
+    "argument-analysis",
+    "editorial-review",
+    "structured-thinking"
+  ]
+}
