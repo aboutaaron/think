@@ -40,10 +40,11 @@ These tools are for anyone who uses AI and wants the output to reflect genuine t
 | **phv-create** | "create my house views" | Build a Personal House Views document from scratch |
 | **phv-challenge** | "PHV check" | Map content against your House Views |
 
-### 🤝 Networking
+### 🤝 Networking & Career
 | Skill | Trigger | What it does |
 |-------|---------|-------------|
 | **cold-outreach** | "draft an outreach email" | NEXT Careers framework, peer conversation framing |
+| **elevator-pitch** | "build my pitch" | Personal brand statement + tailored elevator pitch |
 
 ## What Are House Views?
 
