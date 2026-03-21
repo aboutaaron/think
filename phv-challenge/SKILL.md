@@ -1,11 +1,25 @@
 ---
 name: phv-challenge
-description: Map any article, argument, or idea against Aaron's 6 Personal House Views (PHVs) to identify what it supports, challenges, or extends. Use when asked to "map this to my house views", "PHV check", "how does this relate to my views", "challenge my views with this", or during morning briefs and article summaries when the content is substantive enough to warrant PHV analysis. Aaron's House Views are at docs/house-views.md.
+description: Map any article, argument, or idea against Personal House Views (PHVs) to identify what it supports, challenges, or extends. Use when asked to "map this to my house views", "PHV check", "how does this relate to my views", "challenge my views with this", or during morning briefs and article summaries when the content is substantive enough to warrant PHV analysis. Requires a House Views file — use phv-create skill to generate one if you don't have one yet.
 ---
 
 # PHV Challenge
 
-Map incoming content against Aaron's 6 Personal House Views.
+Map incoming content against your Personal House Views.
+
+## What Are House Views?
+
+House Views are **falsifiable positions you hold about the world** — named, tracked, and actively challenged. The concept comes from [Azeem Azhar's "The Lantern and the Flame"](https://www.exponentialview.co/p/the-lantern-and-the-flame), where he describes codifying what he already believes so that new arguments face *challenge rather than confirmation*.
+
+Each House View has:
+- **A position** — a clear, debatable claim
+- **Sources** — the evidence and thinking behind it
+- **A "therefore"** — what it means for your decisions
+- **A revision trigger** — what would make you change your mind
+
+The power of House Views is that they make your assumptions explicit and testable. Without them, you absorb new information passively — nodding along with whatever sounds smart. With them, every new piece of content becomes a test: does this confirm, challenge, or extend what I already believe?
+
+If you don't have a House Views file yet, use the **phv-create** skill to build one.
 
 ## Input
 
@@ -13,14 +27,7 @@ Any article, essay, argument, tweet, newsletter, or idea — provided as text, U
 
 ## House Views Reference
 
-Read `docs/house-views.md` for the full PHVs with sources and revision triggers. Summary for quick reference:
-
-- **PHV-1:** EM role shifting from managing craftspeople to designing production systems (factory model)
-- **PHV-2:** Context layer captures value as code commoditizes
-- **PHV-3:** AI confidence and correctness are decoupled — build for skepticism
-- **PHV-4:** Models are mid at taste — editorial judgment is the moat
-- **PHV-5:** Feedback loops are the unit of competitive advantage
-- **PHV-6:** EM role splitting into factory operators vs judgment architects — be the latter
+Read the House Views file (configured via `THINKING_PHV_FILE` env var, or default `docs/house-views.md`).
 
 ## Output
 
@@ -30,10 +37,7 @@ Read `docs/house-views.md` for the full PHVs with sources and revision triggers.
 |-----|----------|------------|---------|
 | 1 | ... | ... | ... |
 | 2 | ... | ... | ... |
-| 3 | ... | ... | ... |
-| 4 | ... | ... | ... |
-| 5 | ... | ... | ... |
-| 6 | ... | ... | ... |
+| ... | ... | ... | ... |
 
 Use "—" for cells with no connection. Not every piece maps to every PHV.
 
@@ -44,7 +48,7 @@ If the content meets or approaches a revision trigger from any PHV, flag it expl
 
 ### One-Line Takeaway
 
-One sentence: what does this piece mean for Aaron's thinking? Is it confirmation, new evidence, or a reason to update?
+One sentence: what does this piece mean for your thinking? Is it confirmation, new evidence, or a reason to update?
 
 ## Guidelines
 
