@@ -2,6 +2,16 @@
 
 A cognitive toolkit for AI-assisted thinking — works with OpenClaw, Claude Code, and Cursor.
 
+## Why This Exists
+
+I built these skills because I noticed a pattern: AI makes it easy to produce work, but it also makes it easy to skip thinking. You ask for a memo, you get a memo. You ask for a strategy doc, you get a strategy doc. It's fluent, it's confident, and it's often generic — because *you* didn't do the hard part first.
+
+The turning point was Ines Lee's ["Think First, AI Second"](https://every.to/p/think-first-ai-second), which laid out the problem clearly: AI's fluency creates an illusion of understanding. You read the output, it sounds right, and you ship it — without ever building your own mental model of the argument. The techniques in that essay (five questions before answering, devil's advocate, structural gap analysis) immediately changed how I work.
+
+I started using these patterns for everything — memos at work, job descriptions, LinkedIn posts, even hiring decisions. Running a draft through the argument architect doesn't just find gaps in the document. It forces me to think through how I'm actually arguing my points, anticipate the questions people will ask, and address blind spots before I present ideas to anyone. When I used it on a job description, it didn't just improve the writing — it helped me think through how the role would actually work once someone was hired. The skill improved the *thinking*, not just the artifact.
+
+These tools are for anyone who uses AI and wants the output to reflect genuine thought, not just plausible language. I built them for myself as a manager who writes memos, strategy docs, and plans — but they apply to code, emails, LinkedIn posts, hiring docs, or anything where clarity matters. The common thread: **think first, then let AI help you execute on thinking you've already done.**
+
 ## Skills
 
 ### 🧠 Thinking
@@ -91,6 +101,11 @@ recall-first → argument-architect → devils-advocate → editorial-review
 
 Each step gates the next. Available as a single command or run individually.
 
-## Credits
+## Credits & Inspiration
 
-House Views framework inspired by [Azeem Azhar](https://www.exponentialview.co/p/the-lantern-and-the-flame). Feynman Test based on [Richard Feynman's learning technique](https://fs.blog/feynman-technique/). NEXT Careers networking framework from [NEXT Careers](https://next-careers.circle.so/).
+- **"Think First, AI Second"** by [Ines Lee (Every)](https://every.to/p/think-first-ai-second) — the essay that started all of this
+- **House Views** framework by [Azeem Azhar (Exponential View)](https://www.exponentialview.co/p/the-lantern-and-the-flame)
+- **Feynman Test** based on [Richard Feynman's learning technique](https://fs.blog/feynman-technique/)
+- **Cold outreach** framework from [NEXT Careers](https://next-careers.circle.so/)
+
+Built by [Aaron Williams](https://acwx.net).
