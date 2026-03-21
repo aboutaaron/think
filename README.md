@@ -106,6 +106,6 @@ Each step gates the next. Available as a single command or run individually.
 - **"Think First, AI Second"** by [Ines Lee (Every)](https://every.to/p/think-first-ai-second) — the essay that started all of this
 - **House Views** framework by [Azeem Azhar (Exponential View)](https://www.exponentialview.co/p/the-lantern-and-the-flame)
 - **Feynman Test** based on [Richard Feynman's learning technique](https://fs.blog/feynman-technique/)
-- **Cold outreach** framework from [NEXT Careers](https://next-careers.circle.so/)
+- **Cold outreach** framework from [NEXT Careers](https://www.linkedin.com/company/nextcareers/)
 
 Built by [Aaron Williams](https://acwx.net).
