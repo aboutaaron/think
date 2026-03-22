@@ -57,6 +57,7 @@ These tools are for anyone who uses AI and wants the output to reflect genuine t
 | Skill | Trigger | What it does |
 |-------|---------|-------------|
 | **skill-audit** | "audit my skills" | Monthly health check — keep, merge, or kill each skill |
+| **bookmark** | "bookmark this" | Quick capture for deferred ideas, tools, links, or concepts |
 
 ## What Are House Views?
 
