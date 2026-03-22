@@ -53,6 +53,11 @@ These tools are for anyone who uses AI and wants the output to reflect genuine t
 | **elevator-pitch** | "build my pitch" | Personal brand statement + tailored elevator pitch |
 | **negotiate** | "help me negotiate" | Comp negotiation strategy — market value, equity, scripting |
 
+### 🔧 Maintenance
+| Skill | Trigger | What it does |
+|-------|---------|-------------|
+| **skill-audit** | "audit my skills" | Monthly health check — keep, merge, or kill each skill |
+
 ## What Are House Views?
 
 House Views are **falsifiable positions you hold about the world** — named, tracked, and actively challenged. The concept comes from [Azeem Azhar's "The Lantern and the Flame"](https://www.exponentialview.co/p/the-lantern-and-the-flame), where he describes codifying what he already believes so new arguments face *challenge rather than confirmation*.
