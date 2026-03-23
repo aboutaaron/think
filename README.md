@@ -75,38 +75,59 @@ Each House View has a position, sources, a "therefore" (what it means for your d
 
 ## Installation
 
-### OpenClaw
-
-Clone this repository into your OpenClaw skills directory:
+Clone the repo, then run the install script for your platform:
 
 ```bash
-cd ~/.openclaw/workspace/skills
 git clone https://github.com/aboutaaron/think.git
+cd think
 ```
-
-OpenClaw will automatically load all standalone skills.
 
 ### Claude Code
 
-Copy the commands to your project:
-
 ```bash
-mkdir -p .claude/commands
-cp claude-code/commands/* .claude/commands/
+./scripts/install.sh claude-code
 ```
 
-Commands are available as `/think:start`, `/think:architect`, etc.
+Installs skills as `/think:*` slash commands in `.claude/commands/`. Use `/think:five-questions`, `/think:argument-architect`, etc.
+
+### OpenAI Codex
+
+```bash
+./scripts/install.sh codex
+```
+
+Installs skills with full SKILL.md + reference files in `.agents/skills/`. Reference skill names in your prompts or AGENTS.md.
 
 ### Cursor
 
-Copy the rules to your project:
-
 ```bash
-mkdir -p .cursor/rules
-cp cursor/rules/* .cursor/rules/
+./scripts/install.sh cursor
 ```
 
-Reference skills by name in Cursor chat: "Use the argument-architect skill on this document."
+Installs skills as rules in `.cursor/rules/`. Reference by name in chat: "Use the argument-architect skill on this document."
+
+### OpenClaw
+
+```bash
+./scripts/install.sh openclaw
+```
+
+Installs skills to `~/.openclaw/workspace/skills/think/`. Auto-loaded on next session.
+
+### Custom directory
+
+Every command accepts an optional target directory:
+
+```bash
+./scripts/install.sh claude-code ./my-project/.claude/commands
+./scripts/install.sh codex ./my-project/.agents/skills
+```
+
+### All platforms at once
+
+```bash
+./scripts/install.sh all
+```
 
 ## Configuration
 
