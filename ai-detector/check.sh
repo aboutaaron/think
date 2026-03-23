@@ -27,6 +27,21 @@ fi
 # Read input — file or inline text
 if [ -f "$1" ]; then
   TEXT=$(cat "$1")
+  # Strip markdown artifacts that skew AI detection scores
+  TEXT=$(python3 -c "
+import re, sys
+text = sys.stdin.read()
+# Remove YAML frontmatter
+text = re.sub(r'^---\n.*?\n---\n', '', text, count=1, flags=re.DOTALL)
+# Remove markdown links but keep link text: [text](url) → text
+text = re.sub(r'\[([^\]]+)\]\([^)]+\)', r'\1', text)
+# Remove bold/italic markers
+text = re.sub(r'\*\*([^*]+)\*\*', r'\1', text)
+text = re.sub(r'\*([^*]+)\*', r'\1', text)
+# Remove heading markers
+text = re.sub(r'^#+\s+', '', text, flags=re.MULTILINE)
+print(text.strip())
+" <<< "$TEXT")
 else
   TEXT="$1"
 fi
