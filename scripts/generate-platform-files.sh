@@ -31,7 +31,7 @@ for entry in "${SKILL_NAMES[@]}"; do
   cmd="${entry#*:}"
   cursor_name="${cmd#think:}"
   
-  src="${REPO_ROOT}/${skill}/SKILL.md"
+  src="${REPO_ROOT}/skills/${skill}/SKILL.md"
   if [ ! -f "$src" ]; then
     echo "SKIP: $src not found"
     continue
