@@ -33,7 +33,7 @@ function getSkillName(content: string): string | null {
   return match?.[1] ?? null;
 }
 
-interface SkillEntry {
+export interface SkillEntry {
   name: string;
   dir: string;
   skillFile: string;
@@ -41,7 +41,7 @@ interface SkillEntry {
   extras: string[]; // reference dirs, scripts, etc.
 }
 
-function discoverSkills(): SkillEntry[] {
+export function discoverSkills(): SkillEntry[] {
   const skills: SkillEntry[] = [];
 
   for (const entry of readdirSync(SKILLS_DIR)) {
@@ -85,9 +85,8 @@ function green(text: string): string {
 
 // ── Platform Installers ──────────────────────────────────────────────
 
-export function installClaudeCode(dir?: string, dryRun = false): void {
+export function installClaudeCode(skills: SkillEntry[], dir?: string, dryRun = false): void {
   const target = dir || ".claude/commands";
-  const skills = discoverSkills();
 
   if (!dryRun) mkdirSync(target, { recursive: true });
 
@@ -108,9 +107,8 @@ export function installClaudeCode(dir?: string, dryRun = false): void {
   console.log("  Usage: /think:five-questions, /think:argument-architect, etc.");
 }
 
-export function installCodex(dir?: string, dryRun = false): void {
+export function installCodex(skills: SkillEntry[], dir?: string, dryRun = false): void {
   const target = dir || ".agents/skills";
-  const skills = discoverSkills();
 
   if (!dryRun) mkdirSync(target, { recursive: true });
 
@@ -136,9 +134,8 @@ export function installCodex(dir?: string, dryRun = false): void {
   console.log("  Usage: Reference skill names in your prompts or AGENTS.md");
 }
 
-export function installCursor(dir?: string, dryRun = false): void {
+export function installCursor(skills: SkillEntry[], dir?: string, dryRun = false): void {
   const target = dir || ".cursor/rules";
-  const skills = discoverSkills();
 
   if (!dryRun) mkdirSync(target, { recursive: true });
 
@@ -159,10 +156,9 @@ export function installCursor(dir?: string, dryRun = false): void {
   console.log('  Usage: Reference by name in chat — "Use the argument-architect skill"');
 }
 
-export function installOpenClaw(dir?: string, dryRun = false): void {
+export function installOpenClaw(skills: SkillEntry[], dir?: string, dryRun = false): void {
   const target = dir || join(homedir(), ".openclaw/workspace/skills/think");
   const skillsTarget = join(target, "skills");
-  const skills = discoverSkills();
 
   if (!dryRun) mkdirSync(skillsTarget, { recursive: true });
 

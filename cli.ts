@@ -5,8 +5,9 @@ import {
   installCodex,
   installCursor,
   installOpenClaw,
+  discoverSkills,
   type Platform,
-} from "./scripts/install.js";
+} from "./scripts/install.js"; // tsx resolves .ts automatically
 
 const cli = meow(
   `
@@ -46,7 +47,9 @@ const cli = meow(
 
 const PLATFORMS = ["claude-code", "codex", "cursor", "openclaw", "all"] as const;
 
-const installers: Record<Platform, (dir?: string, dryRun?: boolean) => void> = {
+import type { SkillEntry } from "./scripts/install.js";
+
+const installers: Record<Platform, (skills: SkillEntry[], dir?: string, dryRun?: boolean) => void> = {
   "claude-code": installClaudeCode,
   codex: installCodex,
   cursor: installCursor,
@@ -71,12 +74,20 @@ function run(): void {
   const dir = cli.flags.dir || undefined;
   const dryRun = cli.flags.dryRun;
 
+  // Discover skills once, pass to all installers
+  const skills = discoverSkills();
+
+  if (skills.length === 0) {
+    console.error("Error: No skills found in skills/. Is the repository intact?");
+    process.exit(1);
+  }
+
   if (platform === "all") {
     for (const p of Object.keys(installers) as Platform[]) {
-      installers[p](dir, dryRun);
+      installers[p](skills, dir, dryRun);
     }
   } else {
-    installers[platform as Platform](dir, dryRun);
+    installers[platform as Platform](skills, dir, dryRun);
   }
 }
 
