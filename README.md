@@ -84,7 +84,7 @@ cd ~/.openclaw/workspace/skills
 git clone https://github.com/aboutaaron/think.git
 ```
 
-OpenClaw will automatically load all standalone skills (`argument-architect`, `devils-advocate`, etc.) plus the `thinking-pipeline/` plugin (which registers the `/think:*` slash commands).
+OpenClaw will automatically load all standalone skills.
 
 ### Claude Code
 
@@ -92,22 +92,18 @@ Copy the commands to your project:
 
 ```bash
 mkdir -p .claude/commands
-cp thinking-pipeline/claude-code/commands/* .claude/commands/
+cp claude-code/commands/* .claude/commands/
 ```
 
 Commands are available as `/think:start`, `/think:architect`, etc.
 
 ### Cursor
 
-**Option A — .cursorrules (recommended):**
-```bash
-cp thinking-pipeline/cursor/thinking-pipeline.cursorrules /path/to/project/.cursorrules
-```
+Copy the rules to your project:
 
-**Option B — Individual rules:**
 ```bash
 mkdir -p .cursor/rules
-cp thinking-pipeline/cursor/rules/* .cursor/rules/
+cp cursor/rules/* .cursor/rules/
 ```
 
 Reference skills by name in Cursor chat: "Use the argument-architect skill on this document."
@@ -120,15 +116,15 @@ Set `THINKING_PHV_FILE` to point to your House Views file for `/think:phv`:
 export THINKING_PHV_FILE=docs/house-views.md
 ```
 
-## The Full Pipeline
+## The Pipeline
 
-`/think:pipeline` runs all four review skills in sequence:
+The recommended review sequence for any document:
 
 ```
 recall-first → argument-architect → devils-advocate → editorial-review
 ```
 
-Each step gates the next. Available as a single command or run individually.
+Run them in order. Each step's output feeds the next. You can pause, revise, or skip at any point.
 
 ## Credits & Inspiration
 
