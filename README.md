@@ -46,6 +46,11 @@ These tools are for anyone who uses AI and wants the output to reflect genuine t
 | **phv-create** | "create my house views" | Build a Personal House Views document from scratch |
 | **phv-challenge** | "PHV check" | Map content against your House Views |
 
+### 🛡️ Publishing Safety
+| Skill | Trigger | What it does |
+|-------|---------|-------------|
+| **boss-check** | "vet this for my boss" | Flag language that could trigger a negative reaction from leadership |
+
 ### 🤝 Networking & Career
 | Skill | Trigger | What it does |
 |-------|---------|-------------|
