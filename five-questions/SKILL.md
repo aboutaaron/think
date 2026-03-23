@@ -45,3 +45,8 @@ Exactly 5 high-leverage questions that will help achieve the GOAL given the CONT
 - **No preamble.** Don't explain why you're asking questions instead of answering. Just ask.
 - **Number them.** Clean, scannable.
 - After the user answers, THEN proceed to whatever they originally asked for — informed by their answers.
+
+## Question Pacing
+
+- Ask the five questions one at a time, not as a single block.
+- Before moving on, require the user's reasoning, not just the conclusion. If they stay vague or skip ahead, hold on the current question.

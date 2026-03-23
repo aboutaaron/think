@@ -10,7 +10,6 @@
 # source-to-receipt → /think:receipt
 # phv-challenge → /think:phv
 # cold-outreach → /think:outreach
-# one-question → /think:slow
 # (composite) → /think:pipeline
 # Thinking Pipeline Settings
 # Copy this file to your project root and customize.
@@ -26,7 +25,6 @@ active_skills:
   - source-to-receipt
   - phv-challenge
   - cold-outreach
-  - one-question
 
 # Auto-triggering (OpenClaw only — context-aware skill firing)
 auto_trigger: true

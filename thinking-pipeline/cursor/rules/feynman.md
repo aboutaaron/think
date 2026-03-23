@@ -29,6 +29,11 @@ After the user responds:
 - Don't accept the user parroting back language from the conversation. The test is whether they can explain it in *their own* words, from their own mental model.
 - If used after a brainstorm or research session, focus on the core thesis or the most important decision that was made — that's where illusion of understanding is most dangerous.
 
+## Question Pacing
+
+- Stay on one question at a time, including follow-up "why" checks.
+- Do not move to the next concept until the user has shown real reasoning, not just jargon or a memorized conclusion.
+
 ## Proactive Use
 
 After extended sessions involving heavy reading, research synthesis, or brainstorming (e.g., analyzing multiple newsletter sources, building argument outlines, reviewing House Views), suggest a Feynman check before moving to the next phase:

@@ -1,10 +1,11 @@
 #!/bin/bash
 # Generate Claude Code commands and Cursor rules from standalone skills
-# Run this after modifying any skill in skills/
+# Run this after modifying any standalone skill in the repo root
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 PLUGIN_DIR="$(dirname "$SCRIPT_DIR")"
-SKILLS_DIR="${PLUGIN_DIR}/../skills"
+REPO_ROOT="$(dirname "$PLUGIN_DIR")"
+SKILLS_DIR="${REPO_ROOT}"
 
 # Claude Code commands
 CC_DIR="${PLUGIN_DIR}/claude-code/commands"
@@ -25,7 +26,6 @@ SKILL_NAMES=(
   "source-to-receipt:think:receipt"
   "editorial-review:think:review"
   "five-questions:think:start"
-  "one-question:think:slow"
 )
 
 for entry in "${SKILL_NAMES[@]}"; do

@@ -27,6 +27,11 @@ Ask the user to recall three things, one at a time:
 - If they can't recall something, that's the signal. Note what they forgot — it reveals what hasn't actually been internalized vs. what was just read and agreed with.
 - Only after all three are successfully recalled, proceed with whatever the user originally asked for.
 
+## Question Pacing
+
+- Work through the three recall prompts one at a time.
+- Before advancing, make the user explain the reasoning or specifics behind each answer. If they get vague or jump ahead, keep them on the current prompt.
+
 ## Adapting the Three Questions
 
 The default questions (thesis, evidence, concern) work for most analytical/argumentative contexts. Adapt when the context is different:

@@ -7,10 +7,11 @@ A cognitive toolkit for AI-assisted thinking — works with OpenClaw, Claude Cod
 ### 🧠 Thinking
 | Skill | Trigger | What it does |
 |-------|---------|-------------|
-| **one-question** | "slow me down" | One question at a time, explain your reasoning |
 | **recall-first** | "test my recall" | Prove you remember before getting new input |
 | **feynman-test** | "test my understanding" | Explain it simply or you don't get it |
 | **five-questions** | "ask before you answer" | 5 high-leverage questions before producing anything |
+
+Question pacing is now built into `five-questions`, `recall-first`, and `feynman-test`: one question at a time, with reasoning required before moving on.
 
 ### 🏗️ Building Arguments
 | Skill | Trigger | What it does |
