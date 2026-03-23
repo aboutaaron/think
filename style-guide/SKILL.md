@@ -4,7 +4,7 @@ description: Apply Aaron's specific writing style, tone, and formatting preferen
 ---
 
 # Aaron Williams — Style Guide
-*Framework adapted from Katie Parrott's [How to Build an AI Style Guide](https://every.to/guides/how-to-build-an-ai-style-guide) at Every.*
+*Framework adapted from Katie Parrott's [AI Style Guides: How to Help AI Write Like You](https://every.to/guides/ai-style-guide) at Every.*
 
 This skill applies Aaron's distinct writing style to drafts, outlines, or raw voice notes. 
 
