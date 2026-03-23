@@ -32,6 +32,7 @@ Question pacing is now built into `five-questions`, `recall-first`, and `feynman
 ### 📝 Publishing
 | Skill | Trigger | What it does |
 |-------|---------|-------------|
+| **style-guide** | "edit this in my voice" | Apply Aaron's specific tone, structure, and quirks to a draft |
 | **source-to-receipt** | "make this a receipt" | Article → one inline citation with link text |
 | **editorial-review** | "would you publish this" | Publish/revise/reject with concrete feedback |
 
