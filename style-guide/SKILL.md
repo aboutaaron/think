@@ -4,11 +4,12 @@ description: Apply Aaron's specific writing style, tone, and formatting preferen
 ---
 
 # Aaron Williams — Style Guide
+*Framework adapted from Katie Parrott's [How to Build an AI Style Guide](https://every.to/guides/how-to-build-an-ai-style-guide) at Every.*
 
 This skill applies Aaron's distinct writing style to drafts, outlines, or raw voice notes. 
 
 ## 1. Voice and Tone
-**How it should feel:** Like a smart friend explaining something important over dinner. Conversational, opinionated, and letting your personality shine through. Think Evan Armstrong (The Leverage), Jasmine Sun, Jerusalem Demsas (The Argument), or Noah Smith (Noahpinion). 
+**How it should feel:** Like a smart friend explaining something important over dinner. Conversational, opinionated, and letting your personality shine through. Think Evan Armstrong (The Leverage), Jasmine Sun, Jerusalem Demsas (The Argument), Gia Tolentino, or Noah Smith (Noahpinion). Ben Thompson's clarity is the baseline, but with more of your own personality. 
 
 **Rules:**
 - **Keep the personality:** Never let AI "nerf" the personality out of the writing to make it purely technocratic. It should not read like a dry strategy doc.
