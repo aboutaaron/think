@@ -76,7 +76,14 @@ Each House View has a position, sources, a "therefore" (what it means for your d
 
 ### OpenClaw
 
-The `thinking-pipeline/` directory is an OpenClaw plugin. Registers `/think:*` slash commands.
+Clone this repository into your OpenClaw skills directory:
+
+```bash
+cd ~/.openclaw/workspace/skills
+git clone https://github.com/aboutaaron/think.git
+```
+
+OpenClaw will automatically load all standalone skills (`argument-architect`, `devils-advocate`, etc.) plus the `thinking-pipeline/` plugin (which registers the `/think:*` slash commands).
 
 ### Claude Code
 
