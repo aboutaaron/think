@@ -14,7 +14,6 @@ This project includes thinking tools as slash commands. Use `/think:start` to be
 - `/think:receipt` — Reduce article to inline citation
 - `/think:phv` — Map content against Personal House Views
 - `/think:outreach` — Draft cold outreach email
-- `/think:slow` — One question at a time, explain your reasoning
 
 ## Setup
 

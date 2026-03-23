@@ -161,17 +161,4 @@ export default async function register(api) {
         "Command think:outreach not found. Check skills directory.",
     }),
   });
-
-  api.registerCommand({
-    name: "think:slow",
-    description:
-      "Slow down — one question at a time, require reasoning before moving on",
-    acceptsArgs: true,
-    requireAuth: false,
-    handler: (ctx) => ({
-      text:
-        skills["think:slow"] ??
-        "Command think:slow not found. Check skills directory.",
-    }),
-  });
 }

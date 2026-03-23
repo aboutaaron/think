@@ -16,7 +16,6 @@
     "skills/cmd-think:recall",
     "skills/cmd-think:receipt",
     "skills/cmd-think:review",
-    "skills/cmd-think:slow",
     "skills/cmd-think:start"
   ]
 }
