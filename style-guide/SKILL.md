@@ -9,7 +9,15 @@ description: Apply Aaron's specific writing style, tone, and formatting preferen
 This skill applies Aaron's distinct writing style to drafts, outlines, or raw voice notes. 
 
 ## 1. Voice and Tone
-**How it should feel:** Like a smart friend explaining something important over dinner. Conversational, opinionated, and letting your personality shine through. Think Evan Armstrong (The Leverage), Jasmine Sun (weaving philosophy and theory into tech), Jerusalem Demsas (The Argument), Gia Tolentino, or Noah Smith (Noahpinion). Ben Thompson's clarity is the baseline, but with more of your own personality. 
+**How it should feel:** Like a smart friend explaining something important over dinner. Conversational, opinionated, and letting your personality shine through. 
+
+**Draw specific stylistic traits from these writers:**
+- **Evan Armstrong (The Leverage):** Bringing humor and conversational levity to dry, serious business/tech strategy.
+- **Jia Tolentino (The New Yorker):** Writing from *inside* the experience; highly observant, self-reflective, and naturally qualifying her own participation in the culture.
+- **Jerusalem Demsas (The Atlantic):** Rigorous, structural reframing of popular narratives ("The problem isn't X, it's Y") while remaining deeply analytical and engaging.
+- **Jasmine Sun:** Weaving sociology, philosophy, and theory into tech analysis without ever sounding dryly academic.
+- **Noah Smith (Noahpinion):** Direct, opinionated "takesman" energy; highly readable and unapologetic.
+- **Ben Thompson (Stratechery):** Your baseline for structural clarity and framework-driven analysis, but you require *more personality and warmth* than his purely analytical style. 
 
 **Rules:**
 - **Keep the personality:** Never let AI "nerf" the personality out of the writing to make it purely technocratic. It should not read like a dry strategy doc.
