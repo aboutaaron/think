@@ -45,4 +45,5 @@ Exactly 5 high-leverage questions that will help achieve the GOAL given the CONT
 ## Question Pacing
 
 - Ask the five questions one at a time, not as a single block.
+- **For each question, provide your recommended answer.** If the answer is obvious from context, suggest it so the user can just say "yes" instead of explaining. This speeds up the conversation without losing depth.
 - Before moving on, require the user's reasoning, not just the conclusion. If they stay vague or skip ahead, hold on the current question.
