@@ -51,6 +51,7 @@ Question pacing is now built into `five-questions`, `recall-first`, and `feynman
 ### 🛡️ Publishing Safety
 | Skill | Trigger | What it does |
 |-------|---------|-------------|
+| **ai-detector** | "run Pangram" | Check text for AI-generated sections via Pangram Labs API |
 | **boss-check** | "vet this for my boss" | Flag language that could trigger a negative reaction from leadership |
 
 ### 🤝 Networking & Career
