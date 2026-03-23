@@ -1,0 +1,23 @@
+{
+  "name": "think-cli",
+  "version": "1.0.0",
+  "description": "Install Think skills into your AI coding environment",
+  "type": "module",
+  "bin": {
+    "think": "./cli.ts"
+  },
+  "scripts": {
+    "install:claude": "tsx cli.ts install claude-code",
+    "install:codex": "tsx cli.ts install codex",
+    "install:cursor": "tsx cli.ts install cursor",
+    "install:openclaw": "tsx cli.ts install openclaw",
+    "install:all": "tsx cli.ts install all"
+  },
+  "dependencies": {
+    "meow": "^13.0.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.0.0",
+    "@types/node": "^22.0.0"
+  }
+}

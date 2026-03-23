@@ -3,20 +3,19 @@
 Welcome to the `think` repository. If you are an AI agent (Claude Code, Cursor, OpenClaw, etc.) working in this repository, you must follow these rules to maintain the architecture.
 
 ## Architecture
-This repo maintains a single source of truth for AI skills, which are then compiled into platform-specific formats.
-- **Source of Truth:** The `skills/` directory (e.g., `skills/argument-architect/SKILL.md`, `skills/five-questions/SKILL.md`).
-- **Generated Files:** `claude-code/commands/` and `cursor/rules/`. Do NOT manually edit files in these directories.
+This repo maintains a single source of truth for AI skills. Platform-specific formats are generated at install time — not checked into the repo.
+- **Source of Truth:** `skills/` directory (e.g., `skills/argument-architect/SKILL.md`).
+- **CLI:** `cli.ts` — TypeScript CLI using meow. Run via `npx tsx cli.ts install <platform>`.
+- **Install Logic:** `scripts/install.ts` — auto-discovers all skills in `skills/` and generates platform files on demand.
 
 ## How to Add or Edit a Skill
 1. **Edit the Source:** Create or modify the `SKILL.md` file in `skills/` (e.g., `skills/new-skill-name/SKILL.md`).
-2. **Update the Map (if new):** If you are adding a *new* skill that needs a `/think:` command, add it to the `SKILL_NAMES` array inside `scripts/generate-platform-files.sh`. The format is `"folder-name:think:command-name"`.
-3. **Run the Generator:** You MUST run the generation script to update the platform files:
-   ```bash
-   ./scripts/generate-platform-files.sh
-   ```
-4. **Update README:** If adding a new skill, add it to the appropriate table in `README.md`.
+2. **Include YAML frontmatter** with at least `name` and `description`.
+3. **Update README:** If adding a new skill, add it to the appropriate table in `README.md`.
+4. **That's it.** The install script auto-discovers all skills. No mapping file or hardcoded list to update.
 
 ## Style Guidelines
-- Keep skills concise. 
+- Keep skills concise.
 - Use YAML frontmatter for `name` and `description`.
-- Do not add complex build tools (npm, python requirements) unless absolutely necessary. This is a markdown-first cognitive toolkit.
+- Reference files go in `skills/<name>/references/`, scripts in `skills/<name>/`.
+- The CLI and install script are the only non-markdown build dependencies (TypeScript + meow).
