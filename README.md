@@ -35,6 +35,7 @@ Question pacing is now built into `five-questions`, `recall-first`, and `feynman
 | **style-guide** | "edit this in my voice" | Apply your writing style from `~/.think/style-guide.md` to any draft |
 | **source-to-receipt** | "make this a receipt" | Article → one inline citation with link text |
 | **editorial-review** | "would you publish this" | Publish/revise/reject with concrete feedback |
+| **publish** | "publish this" | End-to-end: OG image, metadata, Pangram, boss-check, Buttondown archive, LinkedIn hook |
 
 ### 🔄 Reflection
 | Skill | Trigger | What it does |
