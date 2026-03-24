@@ -29,7 +29,9 @@ Files containing personal positions, strategic context, or sensitive data must b
 
 - `~/.think/house-views.md` — personal PHVs
 - `~/.think/work-house-views.md` — work-specific PHVs
-- `~/.think/` — any future sensitive documents
+- `~/.think/style-guide.md` — personal writing style guide
+- `~/.think/work-style-guide.md` — work writing style guide
+- `~/.think/` — any future sensitive or personal documents
 
 The `THINKING_PHV_FILE` env var controls which file the PHV skills read from.
 
