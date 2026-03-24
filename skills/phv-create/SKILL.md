@@ -67,13 +67,12 @@ Write the complete House Views document to the path specified by the `THINKING_P
 
 House Views contain personal strategic positions and potentially sensitive work context. They must be stored **outside any git repository** to prevent accidental commits. Never write PHVs to a repo's `docs/` folder or any tracked directory.
 
+**Before writing, always ensure the directory exists:**
 ```bash
 mkdir -p ~/.think
-# Set in your shell profile:
-export THINKING_PHV_FILE=~/.think/house-views.md
 ```
 
-For work-specific PHVs, use a separate file:
+The `THINKING_PHV_FILE` env var overrides the default path. For work-specific PHVs:
 ```bash
 export THINKING_PHV_FILE=~/.think/work-house-views.md
 ```

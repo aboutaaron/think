@@ -83,6 +83,18 @@ function green(text: string): string {
   return `\x1b[32m${text}\x1b[0m`;
 }
 
+export function ensureSecureStorage(dryRun = false): void {
+  const thinkDir = join(homedir(), ".think");
+  if (!existsSync(thinkDir)) {
+    if (dryRun) {
+      console.log(`  would create ${thinkDir}/`);
+    } else {
+      mkdirSync(thinkDir, { recursive: true });
+      console.log(`${green("✓")} Created ${thinkDir}/ for secure document storage (PHVs, etc.)`);
+    }
+  }
+}
+
 // ── Platform Installers ──────────────────────────────────────────────
 
 export function installClaudeCode(skills: SkillEntry[], dir?: string, dryRun = false): void {

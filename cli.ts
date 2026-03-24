@@ -6,6 +6,7 @@ import {
   installCursor,
   installOpenClaw,
   discoverSkills,
+  ensureSecureStorage,
   type Platform,
   type SkillEntry,
 } from "./lib/install.js"; // tsx resolves .ts automatically
@@ -88,6 +89,9 @@ function run(): void {
   } else {
     installers[platform as Platform](skills, dir, dryRun);
   }
+
+  // Ensure ~/.think/ exists for secure document storage
+  ensureSecureStorage(dryRun);
 }
 
 run();
