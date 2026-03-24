@@ -24,6 +24,15 @@ AGENTS.md           # You're reading it
 README.md           # Must always match reality
 ```
 
+## Secure Storage Convention
+Files containing personal positions, strategic context, or sensitive data must be stored at `~/.think/` — **outside any git repo**. Never write these to `docs/` or any tracked directory.
+
+- `~/.think/house-views.md` — personal PHVs
+- `~/.think/work-house-views.md` — work-specific PHVs
+- `~/.think/` — any future sensitive documents
+
+The `THINKING_PHV_FILE` env var controls which file the PHV skills read from.
+
 ## Style Guidelines
 - Keep skills concise.
 - Use YAML frontmatter for `name` and `description`.

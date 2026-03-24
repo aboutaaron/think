@@ -127,11 +127,22 @@ npx tsx cli.ts install all --dry-run                                     # previ
 
 ## Configuration
 
-Set `THINKING_PHV_FILE` to point to your House Views file for `/think:phv`:
+### House Views
+
+House Views are stored outside any git repo to prevent accidental commits of sensitive positions:
 
 ```bash
-export THINKING_PHV_FILE=docs/house-views.md
+mkdir -p ~/.think
+export THINKING_PHV_FILE=~/.think/house-views.md
 ```
+
+For work-specific PHVs (team strategy, roadmap bets), use a separate file:
+
+```bash
+export THINKING_PHV_FILE=~/.think/work-house-views.md
+```
+
+Add the export to your shell profile (`.bashrc`, `.zshrc`) so it persists.
 
 ## The Pipeline
 

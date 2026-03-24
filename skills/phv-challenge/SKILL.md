@@ -27,7 +27,9 @@ Any article, essay, argument, tweet, newsletter, or idea — provided as text, U
 
 ## House Views Reference
 
-Read the House Views file (configured via `THINKING_PHV_FILE` env var, or default `docs/house-views.md`).
+Read the House Views file (configured via `THINKING_PHV_FILE` env var, default `~/.think/house-views.md`).
+
+**Note:** House Views are stored outside any git repo at `~/.think/` to prevent accidental commits of sensitive positions.
 
 ## Output
 
