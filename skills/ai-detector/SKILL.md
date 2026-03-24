@@ -15,21 +15,42 @@ Run text through [Pangram Labs](https://pangramlabs.com) AI detection API and re
 
 ## Prerequisites
 
-- `PANGRAM_API_KEY` must be set in `.credentials/pangram.env`
+- `PANGRAM_API_KEY` environment variable must be set
 - Pangram account must have available credits
+
+### Setting the API key
+
+Set `PANGRAM_API_KEY` in your environment however your platform prefers:
+
+| Platform | How to set |
+|---|---|
+| **Any shell** | `export PANGRAM_API_KEY=your-key` |
+| **Claude Code / Codex** | Add to your project `.env` or shell profile |
+| **Cursor** | Add to `.env` in your project root |
+| **OpenClaw** | Add to `.credentials/pangram.env` or shell profile |
+| **CI / GitHub Actions** | Repository secret → env var in workflow |
+
+The helper script checks `PANGRAM_API_KEY` from the environment. That's it — no platform-specific config files required.
 
 ## How to Run
 
 ```bash
-source .credentials/pangram.env
+export PANGRAM_API_KEY=your-key
+./skills/ai-detector/check.sh draft.md        # check a file
+./skills/ai-detector/check.sh "some text"     # check inline text
+```
+
+Or call the API directly:
+
+```bash
 curl -s 'https://text.api.pangramlabs.com/v3' \
   -X POST \
   -H 'Content-Type: application/json' \
   -H "x-api-key: ${PANGRAM_API_KEY}" \
-  -d "{\"text\": \"$(cat draft.txt | sed 's/"/\\"/g' | tr '\n' ' ')\"}"
+  -d "{\"text\": \"your text here\"}"
 ```
 
-Or use the helper script: `ai-detector/check.sh <file-or-text>`
+**Note:** The helper script automatically strips markdown (frontmatter, links, bold, headers) before sending to the API. Raw markdown inflates AI scores — always send clean prose.
 
 ## Interpreting Results
 
