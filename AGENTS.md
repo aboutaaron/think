@@ -33,7 +33,7 @@ Files containing personal positions, strategic context, or sensitive data must b
 - `~/.think/work-style-guide.md` — work writing style guide
 - `~/.think/` — any future sensitive or personal documents
 
-The `THINKING_PHV_FILE` env var controls which file the PHV skills read from.
+The `THINKING_PHV_FILE` and `THINKING_STYLE_FILE` env vars control which files the PHV and style-guide skills read from.
 
 ## Style Guidelines
 - Keep skills concise.
