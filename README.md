@@ -32,7 +32,7 @@ Question pacing is now built into `five-questions`, `recall-first`, and `feynman
 ### 📝 Publishing
 | Skill | Trigger | What it does |
 |-------|---------|-------------|
-| **style-guide** | "edit this in my voice" | Apply Aaron's specific tone, structure, and quirks to a draft |
+| **style-guide** | "edit this in my voice" | Apply your writing style from `~/.think/style-guide.md` to any draft |
 | **source-to-receipt** | "make this a receipt" | Article → one inline citation with link text |
 | **editorial-review** | "would you publish this" | Publish/revise/reject with concrete feedback |
 
@@ -139,22 +139,26 @@ npx tsx cli.ts install all --dry-run                                     # previ
 
 ## Configuration
 
-### House Views
+### Personal files at `~/.think/`
 
-House Views are stored outside any git repo to prevent accidental commits of sensitive positions:
+Skills that use personal content (style guides, House Views) read from `~/.think/` — outside any git repo to prevent accidental commits of sensitive data.
 
 ```bash
 mkdir -p ~/.think
-export THINKING_PHV_FILE=~/.think/house-views.md
 ```
 
-For work-specific PHVs (team strategy, roadmap bets), use a separate file:
+The installer creates this directory automatically.
 
-```bash
-export THINKING_PHV_FILE=~/.think/work-house-views.md
-```
+| File | Purpose | Env var override |
+|---|---|---|
+| `~/.think/style-guide.md` | Personal writing voice | `THINKING_STYLE_FILE` |
+| `~/.think/work-style-guide.md` | Work writing voice | `THINKING_STYLE_FILE` |
+| `~/.think/house-views.md` | Personal House Views | `THINKING_PHV_FILE` |
+| `~/.think/work-house-views.md` | Work House Views | `THINKING_PHV_FILE` |
 
-Add the export to your shell profile (`.bashrc`, `.zshrc`) so it persists.
+If no file exists, the style-guide and phv-create skills will interview you to create one.
+
+Add env var overrides to your shell profile (`.bashrc`, `.zshrc`) to switch between personal and work contexts.
 
 ## The Pipeline
 
