@@ -47,7 +47,7 @@ Run the post through the `boss-check` skill.
 
 ### Step 4: Generate OG Image
 
-Generate an editorial illustration for the post:
+Use the `nano-banana-pro` skill (Gemini 3 Pro Image) to generate an editorial illustration:
 
 **Prompt template:**
 ```
@@ -57,11 +57,25 @@ composition. Muted color palette — amber, charcoal, warm cream. No text,
 no people, no photos. Clean, sophisticated, editorial magazine style.
 ```
 
-**Processing:**
-1. Generate at 1536x1024
-2. Resize to 1200x630 (LinkedIn/Twitter OG standard)
-3. Convert to JPG at 85% quality (target: under 100KB)
-4. Save to blog repo at `static/og/[slug].jpg`
+**Generate:**
+```bash
+uv run ~/.codex/skills/nano-banana-pro/scripts/generate_image.py \
+  --prompt "[prompt from template above]" \
+  --filename "og-[slug].png" \
+  --resolution 2K
+```
+
+**Post-process:**
+1. Resize to 1200x630 (LinkedIn/Twitter OG standard)
+2. Convert to JPG at 85% quality (target: under 100KB)
+3. Save to blog repo at `static/og/[slug].jpg`
+
+```python
+from PIL import Image
+img = Image.open("og-[slug].png")
+img = img.resize((1200, 630), Image.LANCZOS).convert("RGB")
+img.save("static/og/[slug].jpg", quality=85, optimize=True)
+```
 
 ### Step 5: Set Metadata
 
