@@ -104,12 +104,12 @@ export function installClaudeCode(skills: SkillEntry[], dir?: string, dryRun = f
 
   for (const skill of skills) {
     const filename = `think:${skill.name}.md`;
-    const stripped = stripFrontmatter(skill.content);
-
+    // Keep full content including YAML frontmatter — Claude Code reads
+    // the description field from frontmatter for the command list UI
     if (dryRun) {
       console.log(`  would write ${join(target, filename)}`);
     } else {
-      writeFileSync(join(target, filename), stripped);
+      writeFileSync(join(target, filename), skill.content);
     }
   }
 
