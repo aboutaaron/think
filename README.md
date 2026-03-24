@@ -87,16 +87,28 @@ Then install skills for your platform:
 
 ### Claude Code
 
+Claude Code slash commands are **project-scoped** — they're only available in the directory where you install them. Choose your approach:
+
+**Global (available in every project):**
 ```bash
-npx tsx cli.ts install claude-code
+npx tsx cli.ts install claude-code --dir ~/.claude/commands
 ```
 
-Installs skills as `/think:*` slash commands in `.claude/commands/`.
+**Per-project (available only in that project):**
+```bash
+cd ~/my-project
+npx tsx ~/path/to/think/cli.ts install claude-code
+```
+
+Installs skills as `/think:*` slash commands (e.g. `/think:five-questions`, `/think:argument-architect`).
 
 ### OpenAI Codex
 
+Same scoping applies — install globally or per-project:
+
 ```bash
-npx tsx cli.ts install codex
+npx tsx cli.ts install codex --dir ~/.agents/skills   # global
+npx tsx cli.ts install codex                           # current project
 ```
 
 Installs skills with full SKILL.md + reference files in `.agents/skills/`.
