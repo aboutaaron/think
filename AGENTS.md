@@ -11,8 +11,18 @@ This repo maintains a single source of truth for AI skills. Platform-specific fo
 ## How to Add or Edit a Skill
 1. **Edit the Source:** Create or modify the `SKILL.md` file in `skills/` (e.g., `skills/new-skill-name/SKILL.md`).
 2. **Include YAML frontmatter** with at least `name` and `description`.
-3. **Update README:** If adding a new skill, add it to the appropriate table in `README.md`.
+3. **Update README.md:** Always update the README when you change files, add skills, or modify the CLI. The README must match reality. No exceptions.
 4. **That's it.** The install script auto-discovers all skills. No mapping file or hardcoded list to update.
+
+## Repo Structure
+```
+cli.ts              # CLI entry point (meow)
+lib/install.ts      # Install logic (imported by cli.ts)
+skills/             # Source of truth — all skills live here
+package.json        # Dependencies (meow, tsx)
+AGENTS.md           # You're reading it
+README.md           # Must always match reality
+```
 
 ## Style Guidelines
 - Keep skills concise.
