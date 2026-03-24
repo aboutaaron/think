@@ -51,10 +51,16 @@ Use the `nano-banana-pro` skill (Gemini 3 Pro Image) to generate an editorial il
 
 **Prompt template:**
 ```
-Minimalist editorial illustration for a blog post titled "[TITLE]".
-[SUMMARY context]. Warm cream/parchment background. Abstract geometric
-composition. Muted color palette — amber, charcoal, warm cream. No text,
-no people, no photos. Clean, sophisticated, editorial magazine style.
+Editorial geometric illustration on warm cream parchment background.
+A minimalist visual metaphor for "[TITLE]" — [SUMMARY context].
+Rendered in thin precise black lines on a subtle grid, with elements
+fragmenting into scattered geometric shapes — sharp triangles, thin
+hexagon outlines, angular fragments. Predominantly monochrome — black
+lines, charcoal fills, light gray tones on cream background. Single
+accent color: deep muted indigo blue, used sparingly on key geometric
+fragments. Thin precise linework throughout, like technical drawing or
+Bloomberg terminal aesthetics. No cartoon style. No thick strokes.
+Sharp, editorial, sophisticated. No text, no people.
 ```
 
 **Generate:**
