@@ -7,7 +7,7 @@ import {
   installOpenClaw,
   discoverSkills,
   type Platform,
-} from "./scripts/install.js"; // tsx resolves .ts automatically
+} from "./lib/install.js"; // tsx resolves .ts automatically
 
 const cli = meow(
   `
@@ -47,7 +47,7 @@ const cli = meow(
 
 const PLATFORMS = ["claude-code", "codex", "cursor", "openclaw", "all"] as const;
 
-import type { SkillEntry } from "./scripts/install.js";
+import type { SkillEntry } from "./lib/install.js";
 
 const installers: Record<Platform, (skills: SkillEntry[], dir?: string, dryRun?: boolean) => void> = {
   "claude-code": installClaudeCode,

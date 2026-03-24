@@ -75,33 +75,36 @@ Each House View has a position, sources, a "therefore" (what it means for your d
 
 ## Installation
 
-Clone the repo, then run the install script for your platform:
+Clone the repo and install dependencies:
 
 ```bash
 git clone https://github.com/aboutaaron/think.git
 cd think
+npm install
 ```
+
+Then install skills for your platform:
 
 ### Claude Code
 
 ```bash
-./scripts/install.sh claude-code
+npx tsx cli.ts install claude-code
 ```
 
-Installs skills as `/think:*` slash commands in `.claude/commands/`. Use `/think:five-questions`, `/think:argument-architect`, etc.
+Installs skills as `/think:*` slash commands in `.claude/commands/`.
 
 ### OpenAI Codex
 
 ```bash
-./scripts/install.sh codex
+npx tsx cli.ts install codex
 ```
 
-Installs skills with full SKILL.md + reference files in `.agents/skills/`. Reference skill names in your prompts or AGENTS.md.
+Installs skills with full SKILL.md + reference files in `.agents/skills/`.
 
 ### Cursor
 
 ```bash
-./scripts/install.sh cursor
+npx tsx cli.ts install cursor
 ```
 
 Installs skills as rules in `.cursor/rules/`. Reference by name in chat: "Use the argument-architect skill on this document."
@@ -109,24 +112,17 @@ Installs skills as rules in `.cursor/rules/`. Reference by name in chat: "Use th
 ### OpenClaw
 
 ```bash
-./scripts/install.sh openclaw
+npx tsx cli.ts install openclaw
 ```
 
 Installs skills to `~/.openclaw/workspace/skills/think/`. Auto-loaded on next session.
 
-### Custom directory
-
-Every command accepts an optional target directory:
+### Options
 
 ```bash
-./scripts/install.sh claude-code ./my-project/.claude/commands
-./scripts/install.sh codex ./my-project/.agents/skills
-```
-
-### All platforms at once
-
-```bash
-./scripts/install.sh all
+npx tsx cli.ts install claude-code --dir ./my-project/.claude/commands  # custom directory
+npx tsx cli.ts install all                                               # all platforms
+npx tsx cli.ts install all --dry-run                                     # preview without writing
 ```
 
 ## Configuration
