@@ -3,20 +3,14 @@
 # Usage: ./check.sh <file>        — check a file
 #        ./check.sh "some text"   — check inline text
 #
-# Requires PANGRAM_API_KEY in environment or .credentials/pangram.env
+# Requires PANGRAM_API_KEY environment variable
 
 set -euo pipefail
 
-# Load API key
 if [ -z "${PANGRAM_API_KEY:-}" ]; then
-  SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-  CRED_FILE="${SCRIPT_DIR}/../../.credentials/pangram.env"
-  if [ -f "$CRED_FILE" ]; then
-    source "$CRED_FILE"
-  else
-    echo "Error: PANGRAM_API_KEY not set and no .credentials/pangram.env found" >&2
-    exit 1
-  fi
+  echo "Error: PANGRAM_API_KEY environment variable not set." >&2
+  echo "  export PANGRAM_API_KEY=your-key-here" >&2
+  exit 1
 fi
 
 if [ -z "${1:-}" ]; then
