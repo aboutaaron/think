@@ -37,6 +37,12 @@ Question pacing is now built into `five-questions`, `recall-first`, and `feynman
 | **editorial-review** | "would you publish this" | Publish/revise/reject with concrete feedback |
 | **publish** | "publish this" | End-to-end: OG image, metadata, Pangram, boss-check, Buttondown archive, LinkedIn hook |
 
+### 🔍 Confidence & Knowledge Hygiene
+| Skill | Trigger | What it does |
+|-------|---------|-------------|
+| **confidence-check** | "gut check" / "how sure are we" | Honest assessment of what you know vs. assume vs. don't know |
+| **stale-check** | "does this contradict anything" | Catch outdated knowledge before saving new learnings |
+
 ### 🔄 Reflection
 | Skill | Trigger | What it does |
 |-------|---------|-------------|
