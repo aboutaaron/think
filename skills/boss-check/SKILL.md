@@ -30,6 +30,7 @@ For each potential hotspot, evaluate:
 - **Specific examples that map to your actual work** — even without naming the company
 - **Commentary adjacent to known company controversies** — guilt by proximity
 - **Implying a problem by framing a solution** — phrases like "X isn't just an internal concern" or "as we scale, Y becomes critical" confirm the problem existed even when the intent is forward-looking. Watch for "not just," "no longer," "isn't merely," "used to be" constructions — they all anchor on a past or current deficiency. Reframe around the opportunity or the product vision instead of the gap being closed.
+- **Specifics about internal AI/technical strategy in external content** — even forward-looking language like "we're building toward X" or "we're exploring how Y can be made available to Z" reveals strategic direction to competitors and may not be sanctioned by leadership. Genericize to the category of investment ("We're investing in how AI can accelerate X") without describing the specific approach, architecture, or implementation. When in doubt, check with recruiting or comms — different teams approach AI positioning differently and what feels innocuous to eng may be sensitive to the business.
 
 ### 🟢 Low Risk — Probably Fine
 - **Industry-wide observations** with no company fingerprints
