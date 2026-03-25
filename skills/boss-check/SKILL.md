@@ -23,6 +23,7 @@ For each potential hotspot, evaluate:
 - **References internal processes, metrics, or decisions** — even vaguely, if someone who works there could identify it
 - **Could be read as commenting on company strategy** — layoffs, reorgs, hiring freezes, product pivots
 - **Reveals non-public information** — even if it seems obvious from the outside
+- **Internal tool or product names in external-facing content** — names like internal dashboards, platforms, services, or codenames that an outside reader wouldn't recognize. These leak org structure and internal architecture to candidates, competitors, or the public. Replace with generic descriptions (e.g., "Ad Insights and Mando" → "dashboards, BI tools, and reporting surfaces")
 
 ### 🟡 Medium Risk — Consider Changing
 - **"At my company" or "where I work"** — creates a direct link even when the observation is general
@@ -46,6 +47,7 @@ For each hotspot found:
 
 - **Assume your boss reads everything you publish.** Because they might.
 - **The test isn't "is this true?" — it's "how could this be read?"** True statements about internal problems are often the most dangerous to publish.
-- **Genericize, don't delete.** Most hotspots can be fixed by removing company-specific details while keeping the insight.
+- **Genericize, don't delete.** Most hotspots can be fixed by removing company-specific details while keeping the insight. This includes internal tool names — replace with descriptions of what they do, not what they're called.
+- **Scan for internal jargon in external docs.** If the content will be read by candidates, customers, or the public, flag any internal product name, platform name, or codename that wouldn't appear on the company's public website. The reader test: would someone with no context understand this sentence?
 - **When in doubt, remove the personal reference.** "At most companies" is almost always safer than "at my company" and usually makes the argument stronger anyway (broader claim = broader audience).
 - **Prior feedback is gold.** If the user shares what their boss flagged before, weight similar patterns heavily.
