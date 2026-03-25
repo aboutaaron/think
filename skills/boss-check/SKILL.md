@@ -29,6 +29,7 @@ For each potential hotspot, evaluate:
 - **"At my company" or "where I work"** — creates a direct link even when the observation is general
 - **Specific examples that map to your actual work** — even without naming the company
 - **Commentary adjacent to known company controversies** — guilt by proximity
+- **Implying a problem by framing a solution** — phrases like "X isn't just an internal concern" or "as we scale, Y becomes critical" confirm the problem existed even when the intent is forward-looking. Watch for "not just," "no longer," "isn't merely," "used to be" constructions — they all anchor on a past or current deficiency. Reframe around the opportunity or the product vision instead of the gap being closed.
 
 ### 🟢 Low Risk — Probably Fine
 - **Industry-wide observations** with no company fingerprints
