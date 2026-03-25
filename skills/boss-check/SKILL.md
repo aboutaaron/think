@@ -23,7 +23,7 @@ For each potential hotspot, evaluate:
 - **References internal processes, metrics, or decisions** — even vaguely, if someone who works there could identify it
 - **Could be read as commenting on company strategy** — layoffs, reorgs, hiring freezes, product pivots
 - **Reveals non-public information** — even if it seems obvious from the outside
-- **Internal tool or product names in external-facing content** — names like internal dashboards, platforms, services, or codenames that an outside reader wouldn't recognize. These leak org structure and internal architecture to candidates, competitors, or the public. Replace with generic descriptions (e.g., "Ad Insights and Mando" → "dashboards, BI tools, and reporting surfaces")
+- **Internal tool or product names in external-facing content** — names like internal dashboards, platforms, services, or codenames that an outside reader wouldn't recognize. These leak org structure and internal architecture to candidates, competitors, or the public. Replace with generic descriptions (e.g., "ProjectX and DataTool" → "dashboards, BI tools, and reporting surfaces")
 
 ### 🟡 Medium Risk — Consider Changing
 - **"At my company" or "where I work"** — creates a direct link even when the observation is general
