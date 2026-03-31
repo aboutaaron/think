@@ -158,6 +158,7 @@ The installer creates this directory automatically.
 
 | File | Purpose | Env var override |
 |---|---|---|
+| `~/.think/profile.md` | Name, role, website, LinkedIn | — |
 | `~/.think/style-guide.md` | Personal writing voice | `THINKING_STYLE_FILE` |
 | `~/.think/work-style-guide.md` | Work writing voice | `THINKING_STYLE_FILE` |
 | `~/.think/house-views.md` | Personal House Views | `THINKING_PHV_FILE` |

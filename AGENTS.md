@@ -27,6 +27,7 @@ README.md           # Must always match reality
 ## Secure Storage Convention
 Files containing personal positions, strategic context, or sensitive data must be stored at `~/.think/` — **outside any git repo**. Never write these to `docs/` or any tracked directory.
 
+- `~/.think/profile.md` — name, role, website, LinkedIn (used by cold-outreach, elevator-pitch)
 - `~/.think/house-views.md` — personal PHVs
 - `~/.think/work-house-views.md` — work-specific PHVs
 - `~/.think/style-guide.md` — personal writing style guide

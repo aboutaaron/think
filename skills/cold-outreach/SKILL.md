@@ -7,9 +7,29 @@ description: Draft cold outreach emails for networking using the NEXT Careers fr
 
 Draft a networking email that opens a peer conversation, not a job ask.
 
+## Setup
+
+This skill reads your profile from `~/.think/profile.md`. If the file doesn't exist, create it first by interviewing the user:
+
+1. Ask: "What's your name, current role, and company?"
+2. Ask: "What's your website and/or LinkedIn URL?"
+3. Ask: "One sentence — what do you work on or care about professionally?"
+4. Write the answers to `~/.think/profile.md` in this format:
+
+```markdown
+# Profile
+- **Name:** [name]
+- **Role:** [role] at [company]
+- **Website:** [url]
+- **LinkedIn:** [url]
+- **Focus:** [one sentence]
+```
+
+Then proceed with the outreach draft.
+
 ## Input
 
-Who the person is, how they were found, and what Aaron wants from the connection (usually: compare notes, learn about their work, explore mutual interests).
+Who the person is, how they were found, and what the user wants from the connection (usually: compare notes, learn about their work, explore mutual interests).
 
 ## Research First
 
@@ -35,9 +55,9 @@ Hi [Name],
 [Scheduling: defer to their convenience. Offer Calendly or "throw out a few times."]
 
 Best,
-Aaron
+[Name from profile.md]
 
-acwx.net · linkedin.com/in/aboutaaron
+[Website from profile.md] · [LinkedIn from profile.md]
 ```
 
 ## Guidelines
@@ -45,9 +65,9 @@ acwx.net · linkedin.com/in/aboutaaron
 - **Max 6 sentences.** Busy people don't read long emails.
 - **Peer framing, always.** "I do X at Netflix, you do Y at Z — would love to compare notes." Never: "I'm looking for opportunities and saw your company is hiring."
 - **Subject line should name the source.** "Hello from Next Play" or "Saw your talk at [event]" — gives the recipient context for why a stranger is emailing.
-- **No resume attachment.** No LinkedIn post links. No "here's my background." The email IS the pitch. acwx.net and LinkedIn in the signature are enough for them to look you up.
+- **No resume attachment.** No LinkedIn post links. No "here's my background." The email IS the pitch. Your website and LinkedIn in the signature are enough for them to look you up.
 - **One CTA.** Either "grab a time" or "throw out a few times." Not both. Not "let me know if you'd be open to..." (too passive).
-- **Warm > formal.** Aaron's voice is direct and casual. "Would love to compare notes" > "I would be grateful for the opportunity to connect."
+- **Warm > formal.** Direct and casual. "Would love to compare notes" > "I would be grateful for the opportunity to connect."
 - After sending, log the outreach in memory for follow-up tracking.
 
 ## NEXT Careers Framework Reference
