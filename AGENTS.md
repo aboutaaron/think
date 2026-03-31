@@ -32,6 +32,7 @@ Files containing personal positions, strategic context, or sensitive data must b
 - `~/.think/work-house-views.md` — work-specific PHVs
 - `~/.think/style-guide.md` — personal writing style guide
 - `~/.think/work-style-guide.md` — work writing style guide
+- `~/.think/lenses/` — custom evaluation frameworks (lens skill)
 - `~/.think/` — any future sensitive or personal documents
 
 The `THINKING_PHV_FILE` and `THINKING_STYLE_FILE` env vars control which files the PHV and style-guide skills read from.

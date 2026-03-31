@@ -37,6 +37,13 @@ Question pacing is now built into `five-questions`, `recall-first`, and `feynman
 | **editorial-review** | "would you publish this" | Publish/revise/reject with concrete feedback |
 | **publish** | "publish this" | End-to-end: OG image, metadata, Pangram, boss-check, Buttondown archive, LinkedIn hook |
 
+### 🔭 Borrowed Frameworks
+| Skill | Trigger | What it does |
+|-------|---------|-------------|
+| **lens** | "evaluate through [X] lens" | Build and apply custom evaluation frameworks from any source material — with revision triggers so they don't silently age into dogma |
+
+Ships with an example lens built from [Slow Ventures' public investment framework](https://drive.google.com/drive/folders/1UFR7j494QOMYRyE7yC1qcjLH3iocRkQJ). See `skills/lens/examples/slow-ventures.md`.
+
 ### 🔍 Confidence & Knowledge Hygiene
 | Skill | Trigger | What it does |
 |-------|---------|-------------|
@@ -163,6 +170,7 @@ The installer creates this directory automatically.
 | `~/.think/work-style-guide.md` | Work writing voice | `THINKING_STYLE_FILE` |
 | `~/.think/house-views.md` | Personal House Views | `THINKING_PHV_FILE` |
 | `~/.think/work-house-views.md` | Work House Views | `THINKING_PHV_FILE` |
+| `~/.think/lenses/*.md` | Custom evaluation frameworks | — |
 
 If no file exists, the style-guide and phv-create skills will interview you to create one.
 
