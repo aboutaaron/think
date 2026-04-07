@@ -1,5 +1,6 @@
 ---
 name: negotiate
+version: 1.0.0
 description: Prepare a compensation negotiation strategy for a job offer. Use when asked to "help me negotiate", "negotiate my offer", "evaluate this offer", "what should I ask for", "comp negotiation", or when the user has received or is expecting a job offer. Covers market value research, equity evaluation, negotiation scripting, and strategy. Based on the NEXT Careers compensation framework.
 ---
 

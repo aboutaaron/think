@@ -1,5 +1,6 @@
 ---
 name: lens
+version: 1.0.0
 description: Build and apply custom evaluation frameworks from any source material. Use when asked to "evaluate through [X] lens", "build a lens from [source]", "apply [framework] to this", or when the user wants to think through someone else's framework deliberately. Two modes — build (distill source material into a reusable lens) and apply (run a lens against something being evaluated).
 ---
 

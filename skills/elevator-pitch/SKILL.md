@@ -1,5 +1,6 @@
 ---
 name: elevator-pitch
+version: 1.0.0
 description: Build and refine a personal brand statement and elevator pitch. Use when asked to "build my pitch", "elevator pitch", "how do I introduce myself", "personal brand", "tell me about yourself", "help me position myself", or when preparing for networking, interviews, or public speaking. Based on the NEXT Careers personal branding framework.
 ---
 

@@ -1,5 +1,6 @@
 ---
 name: source-to-receipt
+version: 1.0.0
 description: Reduce an article or source to a single inline citation ready for LinkedIn or essay writing. Use when asked to "make this a receipt", "reduce this for my post", "give me the one-liner", "how do I cite this inline", or when adding sources to the brainstorm prep doc. Follows the "sources as receipts, not the argument" principle — the source supports Aaron's voice, not the other way around.
 ---
 

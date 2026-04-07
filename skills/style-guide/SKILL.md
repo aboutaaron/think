@@ -1,5 +1,6 @@
 ---
 name: style-guide
+version: 1.0.0
 description: Apply the user's writing style, tone, and formatting preferences to any draft. Use when asked to "edit this in my voice", "apply my style", "make this sound like me", or before finalizing any blog post, essay, memo, or LinkedIn post. Prevents generic AI tone. Requires a style guide file at ~/.think/style-guide.md (personal) or ~/.think/work-style-guide.md (work).
 ---
 

@@ -1,5 +1,6 @@
 ---
 name: recall-first
+version: 1.0.0
 description: Force the user to demonstrate understanding from memory before receiving any new input, suggestions, or analysis. Use when the user says "recall first", "test my recall", "what do I remember", "make me recall", or before providing feedback on a topic the user has previously studied or discussed. Pairs with feynman-test but is stricter — no new information is provided until the user successfully recalls three things from memory.
 ---
 

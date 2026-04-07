@@ -1,5 +1,6 @@
 ---
 name: decision-journal
+version: 1.0.0
 description: Log a decision with expected outcome and review date. Use when asked to "log this decision", "decision journal", "track this decision", "I just decided to", or when the user makes a meaningful choice they should revisit later. The personal version of decision infrastructure — practice what you preach.
 ---
 

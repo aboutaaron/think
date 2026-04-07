@@ -1,5 +1,6 @@
 ---
 name: bookmark
+version: 1.0.0
 description: Quick capture for ideas, tools, links, or concepts to revisit later. Use when asked to "bookmark this", "park it", "save for later", "not now but eventually", "come back to this", or when the user mentions something interesting but wants to defer it. Pure capture — no analysis, no evaluation.
 ---
 

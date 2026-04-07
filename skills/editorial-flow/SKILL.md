@@ -1,5 +1,6 @@
 ---
 name: editorial-flow
+version: 2.0.0
 description: End-to-end blog post pipeline from concept to publish. Ensures the author genuinely understands what they're writing about before drafting, then runs structural, stylistic, and readiness checks. Use when starting a new blog post, resuming a draft, or when asked "let's write", "editorial flow", "start the blog pipeline", or "let's get this post ready."
 ---
 

@@ -1,5 +1,6 @@
 ---
 name: phv-create
+version: 1.0.0
 description: Generate a Personal House Views document from scratch. Use when asked to "create my house views", "build my PHVs", "start my house views", "what do I believe", or when the user wants to formalize their positions on their industry, career, or domain. Based on Azeem Azhar's House Views framework from "The Lantern and the Flame."
 ---
 

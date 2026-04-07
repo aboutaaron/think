@@ -1,5 +1,6 @@
 ---
 name: cold-outreach
+version: 1.0.0
 description: Draft cold outreach emails for networking using the NEXT Careers framework. Use when asked to "draft an outreach email", "help me reach out to", "cold email", "networking email", or when a person of interest is identified from a newsletter, job board, or company discovery. Framing is peer conversation, not job application. Based on NEXT Careers networking methodology.
 ---
 

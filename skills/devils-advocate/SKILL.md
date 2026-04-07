@@ -1,5 +1,6 @@
 ---
 name: devils-advocate
+version: 1.0.0
 description: Brutally honest counterargument generator. Use when asked to "play devil's advocate", "tear this apart", "dismantle my argument", "what would someone say against this", "steelman the other side", "challenge my thinking", or when reviewing a position, thesis, or House View that needs stress-testing from the opposing side. Different from argument-architect (which finds gaps and fixes them) — this skill actively tries to DEFEAT the argument.
 ---
 
