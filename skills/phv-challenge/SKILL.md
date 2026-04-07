@@ -1,5 +1,6 @@
 ---
 name: phv-challenge
+version: 1.0.0
 description: Map any article, argument, or idea against Personal House Views (PHVs) to identify what it supports, challenges, or extends. Use when asked to "map this to my house views", "PHV check", "how does this relate to my views", "challenge my views with this", or during morning briefs and article summaries when the content is substantive enough to warrant PHV analysis. Requires a House Views file — use phv-create skill to generate one if you don't have one yet.
 ---
 

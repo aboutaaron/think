@@ -1,5 +1,6 @@
 ---
 name: stale-check
+version: 1.0.0
 description: Before saving a new learning, insight, or rule, check if it contradicts or updates something you already know. Use when the user says "stale check", "does this contradict anything", "update my knowledge", or automatically during any compound/learning-save step. Prevents knowledge rot by catching outdated beliefs. Inspired by Every's compound knowledge plugin.
 ---
 

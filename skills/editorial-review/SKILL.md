@@ -1,5 +1,6 @@
 ---
 name: editorial-review
+version: 1.0.0
 description: Review any piece of writing as a top editor at a major publication, deciding whether to publish and providing concrete feedback. Use when asked to "review this like an editor", "would you publish this", "editorial review", "is this ready to publish", "give me editor feedback", or before publishing any LinkedIn post, essay, blog post, or article. Delivers a publish/revise/reject decision with specific feedback and next steps.
 ---
 

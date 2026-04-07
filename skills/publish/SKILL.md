@@ -1,5 +1,6 @@
 ---
 name: publish
+version: 1.0.0
 description: End-to-end publishing checklist for blog posts. Generates OG image, sets metadata, runs AI detection and boss-check, archives to Buttondown, drafts LinkedIn hook, and clears social caches. Use when asked to "publish this", "ship this post", "get this ready to publish", or when a blog post draft is finalized.
 ---
 

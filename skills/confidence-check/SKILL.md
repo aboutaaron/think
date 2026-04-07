@@ -1,5 +1,6 @@
 ---
 name: confidence-check
+version: 1.0.0
 description: Pause and honestly assess what you know vs. don't know before committing to a plan, decision, or deliverable. Use when the user says "confidence check", "gut check", "what do we actually know", "how sure are we", or before any high-stakes decision. Callable at any point in a workflow. Inspired by Every's compound knowledge plugin.
 ---
 

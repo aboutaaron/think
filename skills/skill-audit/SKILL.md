@@ -1,5 +1,6 @@
 ---
 name: skill-audit
+version: 1.0.0
 description: Monthly audit of all thinking skills — are they helping or getting in the way? Use when asked to "audit my skills", "skill health check", "review my toolkit", "which skills should I keep", or on the first of the month. Produces a report with keep/merge/kill recommendations.
 ---
 

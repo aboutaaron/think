@@ -1,5 +1,6 @@
 ---
 name: five-questions
+version: 1.0.0
 description: Ask 5 high-leverage questions before producing any plan, document, or solution. Use when starting a brainstorm, planning a doc, scoping a project, or when the user says "five questions", "ask before you answer", "question me first", "help me think before we build", or any time the user provides a goal or brief and you're tempted to jump straight to solutions. Forces clarity before creation. Do NOT produce solutions, outlines, or plans until the questions are answered.
 ---
 

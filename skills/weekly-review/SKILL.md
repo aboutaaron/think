@@ -1,5 +1,6 @@
 ---
 name: weekly-review
+version: 1.0.0
 description: Run a structured weekly reflection — what shipped, what learned, what to carry forward. Use when asked to "weekly review", "reflect on my week", "what did I do this week", "week in review", or on Friday evenings / Sunday nights. Feeds into House Views updates, memory maintenance, and career tracking.
 ---
 

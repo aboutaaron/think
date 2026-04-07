@@ -1,5 +1,6 @@
 ---
 name: ai-detector
+version: 1.0.0
 description: Run text through Pangram AI detection before publishing. Use when asked to "check if this sounds AI", "run Pangram", "AI detection check", "does this sound human", or as the final step before publishing any blog post, essay, or LinkedIn post. Flags AI-generated sections so the author can rewrite them in their own voice.
 ---
 
