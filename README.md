@@ -2,6 +2,15 @@
 
 A cognitive toolkit for AI-assisted thinking. Install it in OpenClaw, Claude Code, Codex, or Cursor.
 
+## Contents
+
+- [Why This Exists](#why-this-exists)
+- [Quick Start](#quick-start)
+- [Skills](#skills)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [The Pipeline](#the-pipeline)
+
 ## Why This Exists
 
 I kept asking AI for serious work and getting plausible work back.
