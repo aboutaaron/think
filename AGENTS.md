@@ -6,13 +6,14 @@ Welcome to the `think` repository. If you are an AI agent (Claude Code, Cursor, 
 This repo maintains a single source of truth for AI skills. Platform-specific formats are generated at install time — not checked into the repo.
 - **Source of Truth:** `skills/` directory (e.g., `skills/argument-architect/SKILL.md`).
 - **CLI:** `cli.ts` — TypeScript CLI using meow. Run via `npx tsx cli.ts install <platform>`.
-- **Install Logic:** `scripts/install.ts` — auto-discovers all skills in `skills/` and generates platform files on demand.
+- **Install Logic:** `lib/install.ts` — auto-discovers all skills in `skills/` and generates platform files on demand.
 
 ## How to Add or Edit a Skill
 1. **Edit the Source:** Create or modify the `SKILL.md` file in `skills/` (e.g., `skills/new-skill-name/SKILL.md`).
 2. **Include YAML frontmatter** with at least `name` and `description`.
 3. **Update README.md:** Always update the README when you change files, add skills, or modify the CLI. The README must match reality. No exceptions.
-4. **That's it.** The install script auto-discovers all skills. No mapping file or hardcoded list to update.
+4. **Verify install docs:** If install instructions change, check `cli.ts`, `package.json`, and `npx tsx cli.ts install <platform> --dry-run` before editing examples.
+5. **That's it.** The install script auto-discovers all skills. No mapping file or hardcoded list to update.
 
 ## Repo Structure
 ```
@@ -41,4 +42,5 @@ The `THINKING_PHV_FILE` and `THINKING_STYLE_FILE` env vars control which files t
 - Keep skills concise.
 - Use YAML frontmatter for `name` and `description`.
 - Reference files go in `skills/<name>/references/`, scripts in `skills/<name>/`.
+- Keep public README examples platform-neutral where possible. Do not default public docs to a private/internal tool unless the project is specifically about that tool.
 - The CLI and install script are the only non-markdown build dependencies (TypeScript + meow).

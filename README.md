@@ -1,91 +1,142 @@
 # Think
 
-A cognitive toolkit for AI-assisted thinking — works with OpenClaw, Claude Code, and Cursor.
+A cognitive toolkit for AI-assisted thinking. Install it in OpenClaw, Claude Code, Codex, or Cursor.
 
 ## Why This Exists
 
-I built these skills because I noticed a pattern: AI makes it easy to produce work, but it also makes it easy to skip thinking. You ask for a memo, you get a memo. You ask for a strategy doc, you get a strategy doc. It's fluent, it's confident, and it's often generic — because *you* didn't do the hard part first.
+I kept asking AI for serious work and getting plausible work back.
 
-The turning point was Ines Lee's ["Think First, AI Second"](https://every.to/p/think-first-ai-second), which laid out the problem clearly: AI's fluency creates an illusion of understanding. You read the output, it sounds right, and you ship it — without ever building your own mental model of the argument. The techniques in that essay (five questions before answering, devil's advocate, structural gap analysis) immediately changed how I work.
+A memo sounded like a memo. A strategy doc had the right shape. A LinkedIn post looked publishable, at least if you squinted. The problem was not that the output was bad. The problem was that I could get all the way to a fluent artifact without doing enough thinking first.
 
-I started using these patterns for everything — memos at work, job descriptions, LinkedIn posts, even hiring decisions. Running a draft through the argument architect doesn't just find gaps in the document. It forces me to think through how I'm actually arguing my points, anticipate the questions people will ask, and address blind spots before I present ideas to anyone. When I used it on a job description, it didn't just improve the writing — it helped me think through how the role would actually work once someone was hired. The skill improved the *thinking*, not just the artifact.
+Ines Lee named the trap in ["Think First, AI Second"](https://every.to/p/think-first-ai-second): AI fluency can create the illusion of understanding. You read the answer, it sounds right, and you ship it before you have built your own mental model.
 
-These tools are for anyone who uses AI and wants the output to reflect genuine thought, not just plausible language. I built them for myself as a manager who writes memos, strategy docs, and plans — but they apply to code, emails, LinkedIn posts, hiring docs, or anything where clarity matters. The common thread: **think first, then let AI help you execute on thinking you've already done.**
+That essay changed how I work. I started using patterns like five questions, devil's advocate, Feynman tests, and structural gap analysis before asking AI to produce anything polished. The result was not just better writing. It was better thinking.
+
+When I ran a job description through `argument-architect`, it did more than tighten the prose. It forced me to clarify how the role would actually work once someone was hired. When I used `devils-advocate` on a strategy memo, it surfaced the objections I would hear in the room before I walked into it.
+
+That is the point of Think: use AI to sharpen judgment, not replace it.
+
+This is for people using AI on work where being plausible is not good enough: managers, engineers, writers, operators, and anyone else making judgment-heavy decisions with a very confident autocomplete machine nearby.
+
+Think first. Then let AI help you execute.
+
+## Quick Start
+
+Clone the repo:
+
+```bash
+git clone https://github.com/aboutaaron/think.git
+cd think
+npm install
+```
+
+Install for Claude Code or Codex:
+
+```bash
+npx tsx cli.ts install claude-code --dir ~/.claude/commands
+npx tsx cli.ts install codex --dir ~/.agents/skills
+```
+
+Cursor and OpenClaw installs are below.
+
+Then use a skill by name:
+
+```text
+Use argument-architect to stress-test this memo.
+```
+
+Or run the full review pipeline:
+
+```text
+recall-first -> argument-architect -> devils-advocate -> editorial-review
+```
+
+Each step feeds the next. Pause, revise, or skip whenever the work needs it.
 
 ## Skills
 
-### 🧠 Thinking
+### Thinking
+
 | Skill | Trigger | What it does |
-|-------|---------|-------------|
-| **recall-first** | "test my recall" | Prove you remember before getting new input |
-| **feynman-test** | "test my understanding" | Explain it simply or you don't get it |
-| **five-questions** | "ask before you answer" | 5 high-leverage questions before producing anything |
+|---|---|---|
+| `recall-first` | "test my recall" | Prove you remember before getting new input. |
+| `feynman-test` | "test my understanding" | Explain it simply or you probably do not understand it yet. |
+| `five-questions` | "ask before you answer" | Ask five high-leverage questions before producing anything. |
 
-Question pacing is now built into `five-questions`, `recall-first`, and `feynman-test`: one question at a time, with reasoning required before moving on.
+Question pacing is built into `five-questions`, `recall-first`, and `feynman-test`: one question at a time, with reasoning required before moving on.
 
-### 🏗️ Building Arguments
+### Building Arguments
+
 | Skill | Trigger | What it does |
-|-------|---------|-------------|
-| **argument-architect** | "stress-test my argument" | Find gaps, suggest one-sentence fixes |
-| **devils-advocate** | "tear this apart" | Three strongest counterarguments, no mercy |
+|---|---|---|
+| `argument-architect` | "stress-test my argument" | Find gaps and suggest one-sentence fixes. |
+| `devils-advocate` | "tear this apart" | Give the three strongest counterarguments, no mercy. |
 
-### 📝 Publishing
+### Publishing
+
 | Skill | Trigger | What it does |
-|-------|---------|-------------|
-| **style-guide** | "edit this in my voice" | Apply your writing style from `~/.think/style-guide.md` to any draft |
-| **source-to-receipt** | "make this a receipt" | Article → one inline citation with link text |
-| **editorial-review** | "would you publish this" | Publish/revise/reject with concrete feedback |
-| **publish** | "publish this" | End-to-end: OG image, metadata, Pangram, boss-check, Buttondown archive, LinkedIn hook |
+|---|---|---|
+| `style-guide` | "edit this in my voice" | Apply your writing style from `~/.think/style-guide.md`. |
+| `source-to-receipt` | "make this a receipt" | Turn an article into one inline citation with link text. |
+| `editorial-review` | "would you publish this" | Give a publish, revise, or reject call with concrete feedback. |
+| `publish` | "publish this" | Run metadata, OG image, Pangram, boss-check, Buttondown archive, and LinkedIn hook steps. |
 
-### 🔭 Borrowed Frameworks
+### Borrowed Frameworks
+
 | Skill | Trigger | What it does |
-|-------|---------|-------------|
-| **lens** | "evaluate through [X] lens" | Build and apply custom evaluation frameworks from any source material — with revision triggers so they don't silently age into dogma |
+|---|---|---|
+| `lens` | "evaluate through [X] lens" | Build and apply custom evaluation frameworks from source material, with revision triggers so they do not quietly become dogma. |
 
-Ships with an example lens built from [Slow Ventures' public investment framework](https://drive.google.com/drive/folders/1UFR7j494QOMYRyE7yC1qcjLH3iocRkQJ). See `skills/lens/examples/slow-ventures.md`.
+Think ships with an example lens built from [Slow Ventures' public investment framework](https://drive.google.com/drive/folders/1UFR7j494QOMYRyE7yC1qcjLH3iocRkQJ). See `skills/lens/examples/slow-ventures.md`.
 
-### 🔍 Confidence & Knowledge Hygiene
+### Confidence and Knowledge Hygiene
+
 | Skill | Trigger | What it does |
-|-------|---------|-------------|
-| **confidence-check** | "gut check" / "how sure are we" | Honest assessment of what you know vs. assume vs. don't know |
-| **stale-check** | "does this contradict anything" | Catch outdated knowledge before saving new learnings |
+|---|---|---|
+| `confidence-check` | "gut check" / "how sure are we" | Separate what you know from what you assume. |
+| `stale-check` | "does this contradict anything" | Catch outdated knowledge before saving new learnings. |
 
-### 🔄 Reflection
-| Skill | Trigger | What it does |
-|-------|---------|-------------|
-| **weekly-review** | "weekly review" | Structured reflection — shipped, learned, carry forward |
-| **decision-journal** | "log this decision" | Track decisions with expected outcomes, review later |
+### Reflection
 
-### 🧭 House Views
 | Skill | Trigger | What it does |
-|-------|---------|-------------|
-| **phv-create** | "create my house views" | Build a Personal House Views document from scratch |
-| **phv-challenge** | "PHV check" | Map content against your House Views |
+|---|---|---|
+| `weekly-review` | "weekly review" | Reflect on what shipped, what changed, and what carries forward. |
+| `decision-journal` | "log this decision" | Track decisions with expected outcomes, then review them later. |
 
-### 🛡️ Publishing Safety
-| Skill | Trigger | What it does |
-|-------|---------|-------------|
-| **ai-detector** | "run Pangram" | Check text for AI-generated sections via Pangram Labs API |
-| **boss-check** | "vet this for my boss" | Flag language that could trigger a negative reaction from leadership |
+### House Views
 
-### 🤝 Networking & Career
 | Skill | Trigger | What it does |
-|-------|---------|-------------|
-| **cold-outreach** | "draft an outreach email" | NEXT Careers framework, peer conversation framing |
-| **elevator-pitch** | "build my pitch" | Personal brand statement + tailored elevator pitch |
-| **negotiate** | "help me negotiate" | Comp negotiation strategy — market value, equity, scripting |
+|---|---|---|
+| `phv-create` | "create my house views" | Build a Personal House Views document from scratch. |
+| `phv-challenge` | "PHV check" | Test new content against your House Views. |
 
-### 🔧 Maintenance
+### Publishing Safety
+
 | Skill | Trigger | What it does |
-|-------|---------|-------------|
-| **skill-audit** | "audit my skills" | Monthly health check — keep, merge, or kill each skill |
-| **bookmark** | "bookmark this" | Quick capture for deferred ideas, tools, links, or concepts |
+|---|---|---|
+| `ai-detector` | "run Pangram" | Check text for AI-generated sections through Pangram Labs. |
+| `boss-check` | "vet this for my boss" | Flag language that could land badly with leadership. |
+
+### Networking and Career
+
+| Skill | Trigger | What it does |
+|---|---|---|
+| `cold-outreach` | "draft an outreach email" | Use the NEXT Careers framework for peer conversation outreach. |
+| `elevator-pitch` | "build my pitch" | Draft a personal brand statement and tailored elevator pitch. |
+| `negotiate` | "help me negotiate" | Plan compensation negotiation strategy, equity framing, and scripts. |
+
+### Maintenance
+
+| Skill | Trigger | What it does |
+|---|---|---|
+| `skill-audit` | "audit my skills" | Review each skill monthly: keep, merge, revise, or kill. |
+| `bookmark` | "bookmark this" | Capture deferred ideas, tools, links, or concepts. |
 
 ## What Are House Views?
 
-House Views are **falsifiable positions you hold about the world** — named, tracked, and actively challenged. The concept comes from [Azeem Azhar's "The Lantern and the Flame"](https://www.exponentialview.co/p/the-lantern-and-the-flame), where he describes codifying what he already believes so new arguments face *challenge rather than confirmation*.
+House Views are falsifiable positions you hold about the world: named, tracked, and actively challenged. The concept comes from Azeem Azhar's ["The Lantern and the Flame"](https://www.exponentialview.co/p/the-lantern-and-the-flame), where he describes codifying what he already believes so new arguments face challenge rather than confirmation.
 
-Each House View has a position, sources, a "therefore" (what it means for your decisions), and a revision trigger (what would change your mind). Use `phv-create` to build yours, then `phv-challenge` to test them against everything you read.
+Each House View has a position, sources, a "therefore" for decisions, and a revision trigger for what would change your mind. Use `phv-create` to build yours, then `phv-challenge` to test them against what you read.
 
 ## Installation
 
@@ -97,35 +148,37 @@ cd think
 npm install
 ```
 
-Then install skills for your platform:
+Then install skills for your platform.
 
 ### Claude Code
 
-Claude Code slash commands are **project-scoped** — they're only available in the directory where you install them. Choose your approach:
+Claude Code slash commands are project-scoped. They are only available in the directory where you install them.
 
-**Global (available in every project):**
+Install globally:
+
 ```bash
 npx tsx cli.ts install claude-code --dir ~/.claude/commands
 ```
 
-**Per-project (available only in that project):**
+Install in one project:
+
 ```bash
 cd ~/my-project
 npx tsx ~/path/to/think/cli.ts install claude-code
 ```
 
-Installs skills as `/think:*` slash commands (e.g. `/think:five-questions`, `/think:argument-architect`).
+This installs skills as `/think:*` slash commands, such as `/think:five-questions` and `/think:argument-architect`.
 
 ### OpenAI Codex
 
-Same scoping applies — install globally or per-project:
+Install globally or in the current project:
 
 ```bash
-npx tsx cli.ts install codex --dir ~/.agents/skills   # global
-npx tsx cli.ts install codex                           # current project
+npx tsx cli.ts install codex --dir ~/.agents/skills
+npx tsx cli.ts install codex
 ```
 
-Installs skills with full SKILL.md + reference files in `.agents/skills/`.
+This installs skills with full `SKILL.md` files and references in `.agents/skills/`.
 
 ### Cursor
 
@@ -133,7 +186,7 @@ Installs skills with full SKILL.md + reference files in `.agents/skills/`.
 npx tsx cli.ts install cursor
 ```
 
-Installs skills as rules in `.cursor/rules/`. Reference by name in chat: "Use the argument-architect skill on this document."
+This installs skills as rules in `.cursor/rules/`. Reference them by name in chat: "Use the argument-architect skill on this document."
 
 ### OpenClaw
 
@@ -141,21 +194,21 @@ Installs skills as rules in `.cursor/rules/`. Reference by name in chat: "Use th
 npx tsx cli.ts install openclaw
 ```
 
-Installs skills to `~/.openclaw/workspace/skills/think/`. Auto-loaded on next session.
+This installs skills to `~/.openclaw/workspace/skills/think/`. They load automatically on the next session.
 
 ### Options
 
 ```bash
-npx tsx cli.ts install claude-code --dir ./my-project/.claude/commands  # custom directory
-npx tsx cli.ts install all                                               # all platforms
-npx tsx cli.ts install all --dry-run                                     # preview without writing
+npx tsx cli.ts install claude-code --dir ./my-project/.claude/commands
+npx tsx cli.ts install all
+npx tsx cli.ts install all --dry-run
 ```
 
 ## Configuration
 
-### Personal files at `~/.think/`
+### Personal Files at `~/.think/`
 
-Skills that use personal content (style guides, House Views) read from `~/.think/` — outside any git repo to prevent accidental commits of sensitive data.
+Skills that use personal content read from `~/.think/`, outside any git repo, to reduce the chance of committing sensitive material.
 
 ```bash
 mkdir -p ~/.think
@@ -172,25 +225,25 @@ The installer creates this directory automatically.
 | `~/.think/work-house-views.md` | Work House Views | `THINKING_PHV_FILE` |
 | `~/.think/lenses/*.md` | Custom evaluation frameworks | — |
 
-If no file exists, the style-guide and phv-create skills will interview you to create one.
+If no file exists, `style-guide` and `phv-create` will interview you to create one.
 
-Add env var overrides to your shell profile (`.bashrc`, `.zshrc`) to switch between personal and work contexts.
+Add env var overrides to your shell profile, such as `.bashrc` or `.zshrc`, to switch between personal and work contexts.
 
 ## The Pipeline
 
-The recommended review sequence for any document:
+The core workflow is simple: remember what you know, build the argument, attack it, then decide whether it is ready.
 
+```text
+recall-first -> argument-architect -> devils-advocate -> editorial-review
 ```
-recall-first → argument-architect → devils-advocate → editorial-review
-```
 
-Run them in order. Each step's output feeds the next. You can pause, revise, or skip at any point.
+Run it when the output needs to survive contact with a real reader, teammate, or decision.
 
-## Credits & Inspiration
+## Credits and Inspiration
 
-- **["Think First, AI Second"](https://every.to/p/think-first-ai-second)** by Ines Lee (Every) — the essay that started all of this. Five questions, devil's advocate, Feynman test, and structural gap analysis all trace back here.
-- **["The Lantern and the Flame"](https://www.exponentialview.co/p/the-lantern-and-the-flame)** by Azeem Azhar (Exponential View) — the House Views framework for codifying falsifiable beliefs
-- **[NEXT Careers](https://www.linkedin.com/company/nextcareers/)** — career accelerator whose networking, personal branding, and compensation frameworks inform the cold-outreach, elevator-pitch, and negotiate skills
-- **[Compound Engineering](https://github.com/cescobarresi/compound-engineering)** — the OpenClaw plugin architecture and slash command pattern that the thinking-pipeline plugin is modeled after
+- ["Think First, AI Second"](https://every.to/p/think-first-ai-second) by Ines Lee at Every. The essay that started all of this.
+- ["The Lantern and the Flame"](https://www.exponentialview.co/p/the-lantern-and-the-flame) by Azeem Azhar at Exponential View. The House Views framework for falsifiable beliefs.
+- [NEXT Careers](https://www.linkedin.com/company/nextcareers/). Its networking, personal branding, and compensation frameworks inform `cold-outreach`, `elevator-pitch`, and `negotiate`.
+- [Compound Engineering](https://github.com/cescobarresi/compound-engineering). The OpenClaw plugin architecture and slash command pattern helped shape this project.
 
 Built by [Aaron Williams](https://acwx.net).
