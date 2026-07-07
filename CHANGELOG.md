@@ -6,6 +6,12 @@ Format: [semver](https://semver.org/) per skill. Major = breaking changes or ful
 
 ---
 
+## 2026-07-06
+
+### grill `1.0.0`
+- Initial release — relentless one-question-at-a-time interview that walks a plan's decision tree until shared understanding is reached
+- Adapted from [Matt Pocock's `grilling` skill](https://github.com/mattpocock/skills/blob/main/skills/productivity/grilling/SKILL.md); rewritten in think house style and generalized beyond code (facts-vs-decisions split, dependency-ordered branches, recommend-then-wait, gate-before-acting)
+
 ## 2026-04-07
 
 ### editorial-flow `2.0.0`

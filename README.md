@@ -71,8 +71,11 @@ Each step feeds the next. Pause, revise, or skip whenever the work needs it.
 | `recall-first` | "test my recall" | Prove you remember before getting new input. |
 | `feynman-test` | "test my understanding" | Explain it simply or you probably do not understand it yet. |
 | `five-questions` | "ask before you answer" | Ask five high-leverage questions before producing anything. |
+| `grill` | "grill me on this" | Relentlessly interview every branch of a plan's decision tree until you reach shared understanding. Keeps going where `five-questions` stops. |
 
-Question pacing is built into `five-questions`, `recall-first`, and `feynman-test`: one question at a time, with reasoning required before moving on.
+Question pacing is built into `five-questions`, `grill`, `recall-first`, and `feynman-test`: one question at a time, with reasoning required before moving on.
+
+`grill` is adapted from [Matt Pocock's `grilling` skill](https://github.com/mattpocock/skills/blob/main/skills/productivity/grilling/SKILL.md).
 
 ### Building Arguments
 
