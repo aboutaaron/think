@@ -1,6 +1,6 @@
 ---
 name: skill-audit
-version: 1.0.0
+version: 1.1.0
 description: Monthly audit of all thinking skills — are they helping or getting in the way? Use when asked to "audit my skills", "skill health check", "review my toolkit", "which skills should I keep", or on the first of the month. Produces a report with keep/merge/kill recommendations.
 ---
 
@@ -28,11 +28,12 @@ Build a table of every skill in the repo. For each one, fill in:
 
 ### Step 2: Evaluate Each Skill
 
-For every skill, answer three questions:
+For every skill, answer four questions:
 
 1. **Is it being used?** — If not, why? Forgotten, situational, or actually not useful?
 2. **Is it redundant?** — Does another skill do the same thing? Could two skills merge without losing value?
 3. **Is it constraining?** — Does it force a pattern that doesn't fit how you actually work? Does it add friction without adding clarity?
+4. **What does the agent say?** — For skills with recent runs, ask the agent directly: what broke, what was missing, what would you change about this skill? The agent holds information you don't — which tools it had, what context it couldn't reach, where the skill's instructions fought the situation. Feed answers into Step 4.
 
 ### Step 3: Recommend
 

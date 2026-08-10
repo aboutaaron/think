@@ -1,7 +1,7 @@
 ---
 name: argument-architect
-version: 1.0.0
-description: Analyze reasoning and create an architecture of thinking for any document, brainstorm, essay draft, or argument. Use when asked to "stress-test my argument", "find gaps in my thinking", "audit my reasoning", "architect my argument", "what's wrong with this", or when reviewing brainstorm docs, essay drafts, LinkedIn posts, or any persuasive writing before publication. Also use proactively after brainstorm sessions to validate logical integrity before drafting.
+version: 1.1.0
+description: Use when asked to "stress-test my argument", "find gaps in my thinking", "audit my reasoning", before publishing persuasive writing, or proactively after brainstorms. Maps the argument's logical chain, flags unstated assumptions and leaps, and prescribes one-sentence fixes — unlike devils-advocate, which attacks rather than repairs.
 ---
 
 # Argument Architect

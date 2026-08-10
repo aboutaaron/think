@@ -1,6 +1,6 @@
 ---
 name: cold-outreach
-version: 1.0.0
+version: 1.1.0
 description: Draft cold outreach emails for networking using the NEXT Careers framework. Use when asked to "draft an outreach email", "help me reach out to", "cold email", "networking email", or when a person of interest is identified from a newsletter, job board, or company discovery. Framing is peer conversation, not job application. Based on NEXT Careers networking methodology.
 ---
 
@@ -37,8 +37,8 @@ Who the person is, how they were found, and what the user wants from the connect
 Before drafting, gather:
 1. **The person's role and company** — from the source where they were found
 2. **What their company does** — one sentence
-3. **The connection point** — what Aaron and this person have in common (industry, function, problem space, mutual community)
-4. **The ask** — what Aaron actually wants (usually a 15-20 min conversation, not a job)
+3. **The connection point** — what the user (per `~/.think/profile.md`) and this person have in common (industry, function, problem space, mutual community)
+4. **The ask** — what the user actually wants (usually a 15-20 min conversation, not a job)
 
 ## Email Template
 
@@ -78,4 +78,4 @@ Three networking types (from NEXT Careers Circle):
 2. **Structured** — targeting a specific company or role. "I want to get in front of [company]."
 3. **Co-design** — crafting a role at a startup. "I think I can solve [problem] for you."
 
-Default to unstructured unless Aaron specifies otherwise. Structured networking requires more research and a forwardable email format.
+Default to unstructured unless the user specifies otherwise. Structured networking requires more research and a forwardable email format.

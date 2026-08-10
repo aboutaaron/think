@@ -1,7 +1,7 @@
 ---
 name: boss-check
-version: 1.0.0
-description: Vet any public-facing content for language that could trigger a negative reaction from your manager or leadership. Use when asked to "boss check", "vet this for my boss", "check for hotspots", "is this safe to post", or before publishing anything on LinkedIn, a blog, Twitter, or any public platform where your employer might see it. Flags specific phrases that could be read as airing internal problems, criticizing company decisions, or revealing non-public information.
+version: 1.1.0
+description: Use before publishing anything public your employer might see, or when asked to "boss check", "vet this for my boss", "is this safe to post". Flags phrases that could read as airing internal problems, criticizing company decisions, or leaking non-public information, with a fix for each.
 ---
 
 # Boss Check

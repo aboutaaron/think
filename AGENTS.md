@@ -15,6 +15,18 @@ This repo maintains a single source of truth for AI skills. Platform-specific fo
 4. **Verify install docs:** If install instructions change, check `cli.ts`, `package.json`, and `npx tsx cli.ts install <platform> --dry-run` before editing examples.
 5. **That's it.** The install script auto-discovers all skills. No mapping file or hardcoded list to update.
 
+## Writing a New Skill
+
+Before adding a skill, ask: would the agent get this wrong without it? Have you done this three times, and will you do it three more? If no to either, don't write it — every skill has a permanent context cost.
+
+Checklist for the skill itself (see `docs/audits/2026-08-10-skill-writing-review.md` for the full rationale):
+
+- **Description = router.** The description is the only part always in context. Lead with *when* to reach for the skill (including the trigger phrases users actually say), end with what it does, and disambiguate from neighboring skills. Target under ~50 words.
+- **Be precise about:** the goal (what "done" looks like, how to self-verify), constraints and gates, and context the model can't derive (frameworks, thresholds, schemas, taste).
+- **Be ambiguous about:** steps, failure handling, and runtime specifics (paths, file lists, counts, versions). Let the agent adapt to what's in front of it.
+- **Prevent rot.** Volatile content — exact commands, API payloads, site-specific paths — goes in `references/` or links to the source of truth, never inline in the workflow. When a skill needs repeated fixes, regenerate the section from a stable base instead of patching; accreted patches cloud a skill's focus.
+- **Ask the agent.** Before writing, ask it what tools and context it has. After a run, ask what broke and what it needs — then fold that in.
+
 ## Repo Structure
 ```
 cli.ts              # CLI entry point (meow)

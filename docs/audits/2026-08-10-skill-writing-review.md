@@ -1,5 +1,10 @@
 # Skill Writing Review — 2026-08-10
 
+> **Status:** Recommendations 1–5 and 7–9 applied on 2026-08-10.
+> #6 (regenerate-don't-patch for boss-check/editorial-review) is process
+> guidance for the *next* time those skills change. #10 (recall-first +
+> feynman-test merge) is deferred to the next `skill-audit` run.
+
 A review of every skill in this repo against the lessons in PostHog's
 ["What nobody tells you about writing agent skills"](https://newsletter.posthog.com/p/what-nobody-tells-you-about-writing)
 (Product for Engineers, 2026-08-03).

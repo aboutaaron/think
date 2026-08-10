@@ -1,7 +1,7 @@
 ---
 name: grill
-version: 1.0.0
-description: A relentless one-question-at-a-time interview that stress-tests a plan or design before any work begins. Use when the user says "grill me", "grill me on this", "grill this plan", "interview me", "stress-test this before I build", "walk me through the decisions", or when the user has a plan/design/approach they want hardened before execution. Different from five-questions (which asks exactly 5 and stops) — grill keeps going until every branch of the decision tree is resolved and shared understanding is reached. Different from devils-advocate (which attacks a finished position) — grill resolves open decisions collaboratively. Do NOT enact the plan until the user confirms alignment.
+version: 1.1.0
+description: Use when the user says "grill me", "interview me", "stress-test this before I build", or has a plan with unresolved decisions. A relentless one-question-at-a-time interview that continues until every decision is resolved — unlike five-questions (stops at 5) or devils-advocate (attacks a finished position).
 ---
 
 # Grill
