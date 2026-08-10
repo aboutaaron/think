@@ -257,5 +257,6 @@ Run it when the output needs to survive contact with a real reader, teammate, or
 - ["The Lantern and the Flame"](https://www.exponentialview.co/p/the-lantern-and-the-flame) by Azeem Azhar at Exponential View. The House Views framework for falsifiable beliefs.
 - [NEXT Careers](https://www.linkedin.com/company/nextcareers/). Its networking, personal branding, and compensation frameworks inform `cold-outreach`, `elevator-pitch`, and `negotiate`.
 - [Compound Engineering](https://github.com/cescobarresi/compound-engineering). The OpenClaw plugin architecture and slash command pattern helped shape this project.
+- ["What nobody tells you about writing agent skills"](https://newsletter.posthog.com/p/what-nobody-tells-you-about-writing) by Ian Vanagas at PostHog. Its lessons shape the skill-writing checklist in `AGENTS.md`; the audit applying them lives in `docs/audits/2026-08-10-skill-writing-review.md`.
 
 Built by [Aaron Williams](https://acwx.net).

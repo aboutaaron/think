@@ -21,7 +21,7 @@ Before adding a skill, ask: would the agent get this wrong without it? Have you 
 
 Checklist for the skill itself (see `docs/audits/2026-08-10-skill-writing-review.md` for the full rationale):
 
-- **Description = router.** The description is the only part always in context. Lead with *when* to reach for the skill (including the trigger phrases users actually say), end with what it does, and disambiguate from neighboring skills. Target under ~50 words.
+- **Description = router.** On platforms that keep frontmatter loaded (Claude Code, Codex, OpenClaw — Cursor strips it), the description is the only part always in context, so write for those platforms. Lead with *when* to reach for the skill (including the trigger phrases users actually say), end with what it does, and disambiguate from neighboring skills. Target under ~50 words.
 - **Be precise about:** the goal (what "done" looks like, how to self-verify), constraints and gates, and context the model can't derive (frameworks, thresholds, schemas, taste).
 - **Be ambiguous about:** steps, failure handling, and runtime specifics (paths, file lists, counts, versions). Let the agent adapt to what's in front of it.
 - **Prevent rot.** Volatile content — exact commands, API payloads, site-specific paths — goes in `references/` or links to the source of truth, never inline in the workflow. When a skill needs repeated fixes, regenerate the section from a stable base instead of patching; accreted patches cloud a skill's focus.

@@ -134,7 +134,11 @@ patterns keep growing, move them to `references/learned-patterns.md`.
 **7. Trim the longest descriptions.** Twenty-five descriptions at 40–100
 words each is roughly 1,500 words permanently in context — the exact failure
 mode PostHog hit ("effectiveness declined as skill descriptions filled the
-context window"). Keep the trigger phrases and the disambiguation contrasts
+context window"). Platform caveat: this cost applies where descriptions are
+always-loaded metadata — Claude Code keeps frontmatter for the command list,
+and Codex/OpenClaw install SKILL.md wholesale. The Cursor installer strips
+frontmatter entirely (`lib/install.ts`), so trimming buys nothing there; it
+pays on every other platform. Keep the trigger phrases and the disambiguation contrasts
 (those do routing work); cut restated body content. Worst offenders: `grill`
 (~100 words — the Matt Pocock attribution and the double contrast can live
 in the body), `argument-architect`, `boss-check`, `feynman-test`. Target:
