@@ -1,0 +1,59 @@
+name: Maintenance
+
+on:
+  schedule:
+    - cron: "0 9 * * 1" # weekly link check — Mondays 09:00 UTC
+    - cron: "0 9 1 * *" # monthly skill-audit reminder — 1st of the month 09:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  link-check:
+    # Runs on the weekly cron and on manual dispatch; skipped on the monthly cron.
+    if: github.event.schedule != '0 9 1 * *'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check links in markdown
+        id: lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --no-progress --exclude-path node_modules './**/*.md'
+          fail: false
+
+      - name: Open issue for broken links
+        if: steps.lychee.outputs.exit_code != 0
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: "Link rot: broken links found in markdown"
+          content-filepath: ./lychee/out.md
+          labels: maintenance
+
+  audit-reminder:
+    if: github.event.schedule == '0 9 1 * *'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Open monthly skill-audit issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const date = new Date().toISOString().slice(0, 10);
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `Monthly skill audit — ${date}`,
+              body: [
+                "Time for the monthly toolkit review. Run the `skill-audit` skill:",
+                "",
+                "> audit my skills",
+                "",
+                "It inventories every skill, asks what the agent says broke on recent runs,",
+                "assigns keep/merge/kill/watch, and writes the report to `docs/audits/`.",
+                "Close this issue once the report is committed.",
+              ].join("\n"),
+              labels: ["maintenance"],
+            });

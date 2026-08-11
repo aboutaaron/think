@@ -29,13 +29,17 @@ Checklist for the skill itself (see `docs/audits/2026-08-10-skill-writing-review
 
 ## Repo Structure
 ```
-cli.ts              # CLI entry point (meow)
-lib/install.ts      # Install logic (imported by cli.ts)
-skills/             # Source of truth — all skills live here
-package.json        # Dependencies (meow, tsx)
-AGENTS.md           # You're reading it
-README.md           # Must always match reality
+cli.ts                      # CLI entry point (meow)
+lib/install.ts              # Install logic (imported by cli.ts)
+skills/                     # Source of truth — all skills live here
+scripts/validate-skills.ts  # CI check: frontmatter contract + README sync
+.github/workflows/          # CI (validate, dry-run, typecheck) + scheduled maintenance
+package.json                # Dependencies (meow, tsx, typescript)
+AGENTS.md                   # You're reading it
+README.md                   # Must always match reality
 ```
+
+CI enforces parts of this file mechanically (`.github/workflows/ci.yml`): frontmatter `name`/`description` present, name matching the directory, the ~50-word description target (hard fail at 80), README/skills sync, and a full installer dry-run. Run `npx tsx scripts/validate-skills.ts` locally before pushing skill changes.
 
 ## Secure Storage Convention
 Files containing personal positions, strategic context, or sensitive data must be stored at `~/.think/` — **outside any git repo**. Never write these to `docs/` or any tracked directory.
