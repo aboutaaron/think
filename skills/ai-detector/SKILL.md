@@ -1,6 +1,6 @@
 ---
 name: ai-detector
-version: 1.0.0
+version: 1.1.0
 description: Run text through Pangram AI detection before publishing. Use when asked to "check if this sounds AI", "run Pangram", "AI detection check", "does this sound human", or as the final step before publishing any blog post, essay, or LinkedIn post. Flags AI-generated sections so the author can rewrite them in their own voice.
 ---
 
@@ -16,40 +16,17 @@ Run text through [Pangram Labs](https://pangramlabs.com) AI detection API and re
 
 ## Prerequisites
 
-- `PANGRAM_API_KEY` environment variable must be set
+- `PANGRAM_API_KEY` set in the environment (shell profile, project `.env`, or CI secret — the helper script only reads the env var, no platform-specific config needed)
 - Pangram account must have available credits
-
-### Setting the API key
-
-Set `PANGRAM_API_KEY` in your environment however your platform prefers:
-
-| Platform | How to set |
-|---|---|
-| **Any shell** | `export PANGRAM_API_KEY=your-key` |
-| **Claude Code / Codex** | Add to your project `.env` or shell profile |
-| **Cursor** | Add to `.env` in your project root |
-| **OpenClaw** | Add to `.credentials/pangram.env` or shell profile |
-| **CI / GitHub Actions** | Repository secret → env var in workflow |
-
-The helper script checks `PANGRAM_API_KEY` from the environment. That's it — no platform-specific config files required.
 
 ## How to Run
 
 ```bash
-export PANGRAM_API_KEY=your-key
 ./skills/ai-detector/check.sh draft.md        # check a file
 ./skills/ai-detector/check.sh "some text"     # check inline text
 ```
 
-Or call the API directly:
-
-```bash
-curl -s 'https://text.api.pangramlabs.com/v3' \
-  -X POST \
-  -H 'Content-Type: application/json' \
-  -H "x-api-key: ${PANGRAM_API_KEY}" \
-  -d "{\"text\": \"your text here\"}"
-```
+The script is the source of truth for calling the API. If it's unavailable, call the API directly per [Pangram's docs](https://www.pangramlabs.com/) rather than guessing at the current endpoint or payload shape.
 
 **Note:** The helper script automatically strips markdown (frontmatter, links, bold, headers) before sending to the API. Raw markdown inflates AI scores — always send clean prose.
 

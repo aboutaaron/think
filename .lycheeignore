@@ -1,0 +1,9 @@
+# Sites that block automated link checkers (auth walls, bot detection),
+# producing false positives in the weekly link check.
+https://www.linkedin.com/.*
+https://linkedin.com/.*
+https://www.teamblind.com/.*
+https://81c.typeform.com/.*
+https://twitter.com/.*
+https://x.com/.*
+https://drive.google.com/.*

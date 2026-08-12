@@ -1,6 +1,6 @@
 ---
 name: stale-check
-version: 1.0.0
+version: 1.1.0
 description: Before saving a new learning, insight, or rule, check if it contradicts or updates something you already know. Use when the user says "stale check", "does this contradict anything", "update my knowledge", or automatically during any compound/learning-save step. Prevents knowledge rot by catching outdated beliefs. Inspired by Every's compound knowledge plugin.
 ---
 
@@ -19,10 +19,10 @@ You are a knowledge auditor. Your job is to catch contradictions before they com
 
 1. **State the new learning.** One sentence. What did we just learn?
 
-2. **Search for contradictions.** Look through:
-   - Project-specific knowledge files (docs/knowledge/, docs/solutions/, self-improving/)
-   - Memory files (MEMORY.md, memory/*.md)
-   - Any relevant skill files or configuration
+2. **Search for contradictions.** First find where this project actually stores knowledge — layouts differ, so discover what exists rather than assuming paths. Typical places:
+   - Memory files (e.g., MEMORY.md, memory/)
+   - Knowledge or solutions directories (e.g., docs/knowledge/, docs/solutions/)
+   - Agent configuration (CLAUDE.md, AGENTS.md, skill files)
    - Prior learnings saved in the same session
 
 3. **Report findings.** Three possible outcomes:

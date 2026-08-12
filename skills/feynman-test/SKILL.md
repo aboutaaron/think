@@ -1,7 +1,7 @@
 ---
 name: feynman-test
-version: 1.0.0
-description: Test real understanding by asking the user to explain concepts in their own words. Use when the user says "feynman test me", "test my understanding", "do I actually understand this", "quiz me on what we discussed", or after a long learning/brainstorm session to verify comprehension. Also trigger proactively after extended explanations or research sessions where the user has consumed a lot of information but hasn't articulated their own understanding. Based on Feynman's principle — if you can't explain it simply, you don't really understand it.
+version: 1.1.0
+description: Use when the user says "feynman test me", "test my understanding", "quiz me on what we discussed", or proactively after long learning or research sessions. Asks the user to explain key concepts in their own words, one at a time — if you can't explain it simply, you don't understand it yet.
 ---
 
 # Feynman Test
