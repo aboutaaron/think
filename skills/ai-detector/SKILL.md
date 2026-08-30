@@ -1,12 +1,12 @@
 ---
 name: ai-detector
-version: 1.0.0
+version: 1.0.1
 description: Run text through Pangram AI detection before publishing. Use when asked to "check if this sounds AI", "run Pangram", "AI detection check", "does this sound human", or as the final step before publishing any blog post, essay, or LinkedIn post. Flags AI-generated sections so the author can rewrite them in their own voice.
 ---
 
 # AI Detector (Pangram)
 
-Run text through [Pangram Labs](https://pangramlabs.com) AI detection API and report which sections are flagged.
+Run text through the [Pangram 4](https://www.pangram.com/blog/pangram-4-migration-guide) AI detection API and report which sections are flagged.
 
 ## When to Use
 
@@ -41,32 +41,26 @@ export PANGRAM_API_KEY=your-key
 ./skills/ai-detector/check.sh "some text"     # check inline text
 ```
 
-Or call the API directly:
+Pangram 4's REST API is asynchronous: direct integrations submit a task, then poll the returned task ID until it reaches `STAGE_SUCCESS` or `STAGE_FAILED`. Use the helper so polling, deadlines, and credential handling stay consistent. For another integration, follow Pangram's [migration guide](https://www.pangram.com/blog/pangram-4-migration-guide) and keep the API key out of command arguments.
 
-```bash
-curl -s 'https://text.api.pangramlabs.com/v3' \
-  -X POST \
-  -H 'Content-Type: application/json' \
-  -H "x-api-key: ${PANGRAM_API_KEY}" \
-  -d "{\"text\": \"your text here\"}"
-```
-
-**Note:** The helper script automatically strips markdown (frontmatter, links, bold, headers) before sending to the API. Raw markdown inflates AI scores — always send clean prose.
+**Note:** The helper script handles polling and automatically strips markdown (frontmatter, links, bold, headers) before sending to the API. Raw markdown inflates AI scores — always send clean prose.
 
 ## Interpreting Results
 
-The API returns sentence-level classifications:
+The API returns segment-level classifications:
 
-- **AI Generated (High confidence)** — 🔴 Must rewrite. Author should do a voice note on this section.
-- **AI Generated (Medium confidence)** — 🟡 Review. May pass, but consider a voice note pass.
-- **Human** — 🟢 Good to go.
+- **AI-Generated** — 🔴 Must rewrite. Author should do a voice note on this section.
+- **AI-Assisted** — 🟡 Review. Consider a voice note pass, especially for high-confidence segments.
+- **Human Written** — 🟢 Good to go.
+
+Pangram 4 also returns `is_humanized` and `humanizer_score` for each segment. Treat a humanized segment as a review signal, not proof of intent.
 
 ## Output Format
 
 After running detection, report:
 
-1. **Overall score** — % flagged as AI-generated
-2. **Flagged sections** — quote each flagged sentence with its confidence level
+1. **Overall score** — % classified as AI-generated or AI-assisted
+2. **Flagged sections** — quote each flagged segment with its label and confidence level
 3. **Recommendation** — which sections need a voice note rewrite
 
 ## Critical Rule

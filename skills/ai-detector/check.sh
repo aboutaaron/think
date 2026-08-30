@@ -43,15 +43,146 @@ fi
 # Escape for JSON
 JSON_TEXT=$(printf '%s' "$TEXT" | python3 -c 'import sys,json; print(json.dumps(sys.stdin.read()))')
 
-RESPONSE=$(curl -s 'https://text.api.pangramlabs.com/v3' \
+API_BASE='https://text.external-api.pangram.com'
+POLL_INTERVAL_SECONDS=${PANGRAM_POLL_INTERVAL_SECONDS:-0.5}
+TIMEOUT_SECONDS=${PANGRAM_TIMEOUT_SECONDS:-300}
+CURL_CONNECT_TIMEOUT_SECONDS=10
+
+if ! [[ "$POLL_INTERVAL_SECONDS" =~ ^[0-9]+([.][0-9]+)?$ ]]; then
+  echo "Error: PANGRAM_POLL_INTERVAL_SECONDS must be a non-negative number." >&2
+  exit 1
+fi
+
+if ! [[ "$TIMEOUT_SECONDS" =~ ^[1-9][0-9]*$ ]]; then
+  echo "Error: PANGRAM_TIMEOUT_SECONDS must be a positive integer." >&2
+  exit 1
+fi
+
+POLL_INTERVAL_MILLISECONDS=$(python3 -c 'import sys; print(int(float(sys.argv[1]) * 1000))' "$POLL_INTERVAL_SECONDS")
+
+HEADER_FILE=$(mktemp)
+chmod 600 "$HEADER_FILE"
+trap 'rm -f "$HEADER_FILE"' EXIT
+printf 'x-api-key: %s\n' "$PANGRAM_API_KEY" > "$HEADER_FILE"
+
+DEADLINE=$((SECONDS + TIMEOUT_SECONDS))
+REQUEST_TIMEOUT_SECONDS=$((DEADLINE - SECONDS))
+if (( REQUEST_TIMEOUT_SECONDS < 1 )); then
+  echo "Error: Pangram task submission exceeded the ${TIMEOUT_SECONDS}-second deadline." >&2
+  exit 1
+fi
+CONNECT_TIMEOUT_SECONDS=$CURL_CONNECT_TIMEOUT_SECONDS
+if (( REQUEST_TIMEOUT_SECONDS < CONNECT_TIMEOUT_SECONDS )); then
+  CONNECT_TIMEOUT_SECONDS=$REQUEST_TIMEOUT_SECONDS
+fi
+
+if ! SUBMIT_RESPONSE=$(curl -fsS "${API_BASE}/task" \
+  --connect-timeout "$CONNECT_TIMEOUT_SECONDS" \
+  --max-time "$REQUEST_TIMEOUT_SECONDS" \
   -X POST \
   -H 'Content-Type: application/json' \
-  -H "x-api-key: ${PANGRAM_API_KEY}" \
-  -d "{\"text\": ${JSON_TEXT}}")
+  -H "@${HEADER_FILE}" \
+  -d "{\"text\": ${JSON_TEXT}, \"model\": \"pangram-4\"}"); then
+  echo "Error: Pangram task submission failed." >&2
+  exit 1
+fi
 
-# Check for errors
-if echo "$RESPONSE" | python3 -c "import sys,json; d=json.load(sys.stdin); sys.exit(0 if 'error' not in d else 1)" 2>/dev/null; then
-  echo "$RESPONSE" | python3 -m json.tool
+if ! TASK_ID=$(printf '%s' "$SUBMIT_RESPONSE" | python3 -c '
+import json, sys
+data = json.load(sys.stdin)
+task_id = data.get("task_id") if isinstance(data, dict) else None
+if not isinstance(task_id, str) or not task_id:
+    raise SystemExit(1)
+print(task_id)
+'); then
+  echo "Error from Pangram API:" >&2
+  printf '%s' "$SUBMIT_RESPONSE" | python3 -m json.tool >&2 || printf '%s\n' "$SUBMIT_RESPONSE" >&2
+  exit 1
+fi
+
+COMPLETED=0
+RESPONSE=''
+
+sleep_before_retry() {
+  local remaining_seconds=$((DEADLINE - SECONDS))
+  local remaining_milliseconds
+  local sleep_milliseconds=$POLL_INTERVAL_MILLISECONDS
+  local sleep_seconds
+
+  (( remaining_seconds > 0 )) || return 1
+  remaining_milliseconds=$((remaining_seconds * 1000))
+  if (( sleep_milliseconds > remaining_milliseconds )); then
+    sleep_milliseconds=$remaining_milliseconds
+  fi
+  (( sleep_milliseconds > 0 )) || return 0
+
+  printf -v sleep_seconds '%d.%03d' \
+    "$((sleep_milliseconds / 1000))" \
+    "$((sleep_milliseconds % 1000))"
+  sleep "$sleep_seconds"
+}
+
+while (( SECONDS < DEADLINE )); do
+  REQUEST_TIMEOUT_SECONDS=$((DEADLINE - SECONDS))
+  (( REQUEST_TIMEOUT_SECONDS > 0 )) || break
+  CONNECT_TIMEOUT_SECONDS=$CURL_CONNECT_TIMEOUT_SECONDS
+  if (( REQUEST_TIMEOUT_SECONDS < CONNECT_TIMEOUT_SECONDS )); then
+    CONNECT_TIMEOUT_SECONDS=$REQUEST_TIMEOUT_SECONDS
+  fi
+
+  if ! RESPONSE=$(curl -fsS "${API_BASE}/task/${TASK_ID}" \
+    --connect-timeout "$CONNECT_TIMEOUT_SECONDS" \
+    --max-time "$REQUEST_TIMEOUT_SECONDS" \
+    -H 'Content-Type: application/json' \
+    -H "@${HEADER_FILE}"); then
+    sleep_before_retry || break
+    continue
+  fi
+
+  if ! STAGE=$(printf '%s' "$RESPONSE" | python3 -c '
+import json, sys
+data = json.load(sys.stdin)
+stage = data.get("stage") if isinstance(data, dict) else None
+if not isinstance(stage, str):
+    raise SystemExit(1)
+print(stage)
+'); then
+    echo "Error from Pangram API: invalid task response." >&2
+    printf '%s' "$RESPONSE" | python3 -m json.tool >&2 || printf '%s\n' "$RESPONSE" >&2
+    exit 1
+  fi
+
+  case "$STAGE" in
+    STAGE_SUCCESS)
+      COMPLETED=1
+      break
+      ;;
+    STAGE_FAILED)
+      echo "Error from Pangram API: task ${TASK_ID} failed." >&2
+      printf '%s' "$RESPONSE" | python3 -m json.tool >&2
+      exit 1
+      ;;
+    *)
+      sleep_before_retry || break
+      ;;
+  esac
+done
+
+if [[ "$COMPLETED" -ne 1 ]]; then
+  echo "Error: Pangram task ${TASK_ID} did not complete within ${TIMEOUT_SECONDS} seconds." >&2
+  exit 1
+fi
+
+# Check for errors and format successful output in one parse
+if FORMATTED_RESPONSE=$(printf '%s' "$RESPONSE" | python3 -c '
+import json, sys
+data = json.load(sys.stdin)
+if "error" in data:
+    raise SystemExit(1)
+json.dump(data, sys.stdout, indent=4)
+print()
+' 2>/dev/null); then
+  printf '%s\n' "$FORMATTED_RESPONSE"
 else
   echo "Error from Pangram API:" >&2
   echo "$RESPONSE" | python3 -m json.tool >&2

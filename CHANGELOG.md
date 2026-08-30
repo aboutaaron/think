@@ -6,6 +6,13 @@ Format: [semver](https://semver.org/) per skill. Major = breaking changes or ful
 
 ---
 
+## 2026-08-30
+
+### ai-detector `1.0.1`
+- Migrated REST requests to Pangram 4 and its current task endpoint
+- Updated classification guidance for `AI-Generated`, `AI-Assisted`, and `Human Written`
+- Documented per-segment humanizer signals
+
 ## 2026-04-07
 
 ### editorial-flow `2.0.0`

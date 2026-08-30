@@ -123,7 +123,7 @@ Think ships with an example lens built from [Slow Ventures' public investment fr
 
 | Skill | Trigger | What it does |
 |---|---|---|
-| `ai-detector` | "run Pangram" | Check text for AI-generated sections through Pangram Labs. |
+| `ai-detector` | "run Pangram" | Check text for AI-generated and AI-assisted sections with Pangram 4. |
 | `boss-check` | "vet this for my boss" | Flag language that could land badly with leadership. |
 
 ### Networking and Career
