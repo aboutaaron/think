@@ -1,6 +1,6 @@
 ---
 name: devils-advocate
-version: 1.0.0
+version: 1.1.0
 description: Brutally honest counterargument generator. Use when asked to "play devil's advocate", "tear this apart", "dismantle my argument", "what would someone say against this", "steelman the other side", "challenge my thinking", or when reviewing a position, thesis, or House View that needs stress-testing from the opposing side. Different from argument-architect (which finds gaps and fixes them) — this skill actively tries to DEFEAT the argument.
 ---
 
@@ -24,6 +24,9 @@ For each counterargument:
 
 ## Guidelines
 
+- Attack the strongest version of the user's actual position, not a proxy inferred from incomplete context. Inspect relevant source material before concluding when the user provides it.
+- Stay evidence-responsive. If new context weakens or defeats a counterargument, explicitly narrow, retract, or replace it. Adversarial rigor is not stubbornness.
+- Distinguish a structural flaw in the position from a gap in one draft or implementation artifact. Do not claim the thesis fails when the evidence only shows that an artifact is incomplete or outdated.
 - Do NOT soften language or qualify criticism. No "you make a great point, but..." — go straight for the throat.
 - Do NOT offer rebuttals or help the user defend against the counterarguments. That's their job.
 - Prioritize counterarguments that are **structurally** threatening (undermine the logic) over those that are **empirically** threatening (cite contrary data). Both matter, but structural attacks are harder to patch.

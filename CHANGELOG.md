@@ -6,6 +6,13 @@ Format: [semver](https://semver.org/) per skill. Major = breaking changes or ful
 
 ---
 
+## 2026-09-21
+
+### devils-advocate `1.1.0`
+- Attack the strongest version of the user's actual position by reviewing relevant source context before concluding
+- Explicitly narrow, retract, or replace counterarguments when new evidence weakens them
+- Distinguish structural flaws from gaps in incomplete or outdated implementation artifacts
+
 ## 2026-07-06
 
 ### grill `1.0.0`
