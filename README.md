@@ -82,7 +82,7 @@ Question pacing is built into `five-questions`, `grill`, `recall-first`, and `fe
 | Skill | Trigger | What it does |
 |---|---|---|
 | `argument-architect` | "stress-test my argument" | Find gaps and suggest one-sentence fixes. |
-| `devils-advocate` | "tear this apart" | Give the three strongest counterarguments, no mercy. |
+| `devils-advocate` | "tear this apart" | Attack the strongest version with up to three evidence-backed counterarguments, revising when context changes. |
 
 ### Publishing
 
